@@ -41,6 +41,7 @@ class Errors extends Component {
     return (
       <Grid item xs={6}>
         <div id="chartBG">
+          <p class="gaugeTitle">Errors (last 10mins)</p>
           <C3Chart
             data={data}
             gauge={gauge}

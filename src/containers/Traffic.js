@@ -41,6 +41,7 @@ class Traffic extends Component {
     return (
       <Grid item xs={6}>
         <div id="chartBG">
+          <p class="gaugeTitle">Traffic (24 hours)</p>
           <C3Chart
             data={data}
             gauge={gauge}

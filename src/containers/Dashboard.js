@@ -19,17 +19,19 @@ class Dashboard extends Component {
     const { classes } = this.props;
 
     return (
-      <div className="dash">
-        <h2>Core Metrics</h2>
-        <div className={classes.root}>
-          <Grid container spacing={24}>
-            <Latency />
-            <Traffic />
-            <Errors />
-            <Saturation />
-          </Grid>
+      <React.Fragment>
+        <h2 class="title">Monitoring Serivce - Core Metrics</h2>
+        <div className="dash">
+          <div className={classes.root}>
+            <Grid container spacing={24}>
+              <Latency />
+              <Traffic />
+              <Errors />
+              <Saturation />
+            </Grid>
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

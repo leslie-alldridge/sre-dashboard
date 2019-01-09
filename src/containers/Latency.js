@@ -41,6 +41,7 @@ class Latency extends Component {
     return (
       <Grid item xs={6}>
         <div id="chartBG">
+          <p class="gaugeTitle">Latency (last 60mins)</p>
           <C3Chart
             data={data}
             gauge={gauge}

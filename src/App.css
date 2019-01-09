@@ -35,6 +35,20 @@ body {
   }
 }
 
+.title {
+  color: #e0e8eb;
+  font-weight: 600;
+  font-size: 44px !important;
+}
+
+.gaugeTitle {
+  color: #e0e8eb;
+  font-weight: 600;
+  font-size: 28px !important;
+  margin-bottom: 0;
+  padding-top: 3%;
+}
+
 .c3-target text {
   fill: #e0e8eb;
   font-size: 44px !important;
