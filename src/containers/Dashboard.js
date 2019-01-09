@@ -6,6 +6,7 @@ import Latency from './Latency';
 import Traffic from './Traffic';
 import Errors from './Errors';
 import Saturation from './Saturation';
+import FullWidthTabs from './Tabs';
 
 const styles = theme => ({
   root: {
@@ -21,6 +22,7 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         <h2 class="title">Monitoring Serivce - Core Metrics</h2>
+        <FullWidthTabs />
         <div className="dash">
           <div className={classes.root}>
             <Grid container spacing={24}>
