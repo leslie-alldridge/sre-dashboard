@@ -42,11 +42,15 @@ body {
 
 #chartBG {
   background-color: #465a64;
-  width: 50%;
+  border-radius: 4px;
 }
 
 .dash {
   background-color: #394850;
+}
+
+.c3 text {
+  fill: #e0e8eb;
 }
 
 /* colors

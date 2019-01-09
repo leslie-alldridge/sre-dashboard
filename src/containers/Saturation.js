@@ -3,7 +3,7 @@ import C3Chart from 'react-c3js';
 import Grid from '@material-ui/core/Grid';
 
 const data = {
-  columns: [['Latency (ms)', 87]],
+  columns: [['Saturation (ms)', 87]],
   type: 'gauge'
 };
 
@@ -36,7 +36,7 @@ const gauge = {
 //   fontSize: '3em'
 // };
 
-class Latency extends Component {
+class Saturation extends Component {
   render() {
     return (
       <Grid item xs={6}>
@@ -54,4 +54,4 @@ class Latency extends Component {
   }
 }
 
-export default Latency;
+export default Saturation;
