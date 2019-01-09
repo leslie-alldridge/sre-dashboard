@@ -24,6 +24,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.4.3",
     "react": "^16.7.0",
+    "react-c3js": "^0.1.20",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.2",

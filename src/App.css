@@ -30,3 +30,8 @@
     transform: rotate(360deg);
   }
 }
+
+.c3-target text {
+  fill: red;
+  font-size: 44px !important;
+}

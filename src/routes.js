@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import Home from "./containers/Home";
-import Register from "./containers/Register";
-import Login from "./containers/Login";
-import Profile from "./containers/Profile";
-import UpdateProfile from "./containers/UpdateProfile";
-import ForgotPassword from "./containers/ForgotPassword";
-import ResetPassword from "./containers/ResetPassword";
-import UpdatePassword from "./containers/UpdatePassword";
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Home from './containers/Home';
+import Register from './containers/Register';
+import Login from './containers/Login';
+import Profile from './containers/Profile';
+import UpdateProfile from './containers/UpdateProfile';
+import ForgotPassword from './containers/ForgotPassword';
+import ResetPassword from './containers/ResetPassword';
+import UpdatePassword from './containers/UpdatePassword';
+import Dashboard from './containers/Dashboard';
 
 class Routes extends Component {
   render() {
@@ -15,6 +16,7 @@ class Routes extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/reset/:token" component={ResetPassword} />
