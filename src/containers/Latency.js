@@ -38,13 +38,15 @@ const gauge = {
 class Latency extends Component {
   render() {
     return (
-      <C3Chart
-        data={data}
-        gauge={gauge}
-        color={color}
-        size={size}
-        // style={style}
-      />
+      <div id="chartBG">
+        <C3Chart
+          data={data}
+          gauge={gauge}
+          color={color}
+          size={size}
+          // style={style}
+        />
+      </div>
     );
   }
 }

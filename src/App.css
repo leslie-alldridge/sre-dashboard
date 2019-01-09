@@ -1,3 +1,7 @@
+body {
+  background-color: #2b353a;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +36,25 @@
 }
 
 .c3-target text {
-  fill: red;
+  fill: #e0e8eb;
   font-size: 44px !important;
 }
+
+#chartBG {
+  background-color: #465a64;
+  width: 50%;
+}
+
+.dash {
+  background-color: #394850;
+}
+
+/* colors
+
+#465A64
+#71C25D
+#CE4E5D
+#D3A438
+#E0E8EB
+#394850
+#2B353A */
