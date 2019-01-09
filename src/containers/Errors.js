@@ -3,7 +3,7 @@ import C3Chart from 'react-c3js';
 import Grid from '@material-ui/core/Grid';
 
 const data = {
-  columns: [['Errors (ms)', 87]],
+  columns: [['Errors %', 1.89]],
   type: 'gauge'
 };
 
@@ -14,22 +14,20 @@ const size = {
 const color = {
   pattern: ['#60B044', '#F6C600', '#F97600', '#FF0000'],
   threshold: {
-    unit: 'value', // percentage is default
     //            max: 200, // 100 is default
     values: [90, 100, 150, 180]
   }
 };
 
 const gauge = {
-  max: 200, // 100 is default,
+  max: 5, // 100 is default,
   label: {
     format: function(value, ratio) {
       return value;
     },
     show: false // to turn off the min/max labels.
   },
-  values: [30, 60, 90, 100],
-  units: 'value'
+  values: [30, 60, 90, 100]
 };
 
 // const style = {
@@ -50,6 +48,8 @@ class Errors extends Component {
             // style={style}
           />
         </div>
+        <br />
+        <br />
       </Grid>
     );
   }

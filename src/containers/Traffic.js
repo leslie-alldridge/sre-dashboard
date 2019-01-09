@@ -3,7 +3,7 @@ import C3Chart from 'react-c3js';
 import Grid from '@material-ui/core/Grid';
 
 const data = {
-  columns: [['Traffic (ms)', 87]],
+  columns: [["Traffic (rpm 000's)", 741]],
   type: 'gauge'
 };
 
@@ -12,7 +12,7 @@ const size = {
 };
 
 const color = {
-  pattern: ['#60B044', '#F6C600', '#F97600', '#FF0000'],
+  pattern: ['#60B044', '#F6C600', '#F97600', '#CE4E5D'],
   threshold: {
     unit: 'value', // percentage is default
     //            max: 200, // 100 is default
@@ -21,7 +21,7 @@ const color = {
 };
 
 const gauge = {
-  max: 200, // 100 is default,
+  max: 800, // 100 is default,
   label: {
     format: function(value, ratio) {
       return value;

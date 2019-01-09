@@ -61,10 +61,15 @@ body {
 
 .dash {
   background-color: #394850;
+  border-radius: 4px;
 }
 
 .c3 text {
   fill: #e0e8eb;
+}
+
+.c3-legend-item text {
+  font-size: 18px !important;
 }
 
 /* colors

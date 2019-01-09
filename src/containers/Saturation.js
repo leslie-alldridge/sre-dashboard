@@ -3,7 +3,7 @@ import C3Chart from 'react-c3js';
 import Grid from '@material-ui/core/Grid';
 
 const data = {
-  columns: [['Saturation (ms)', 87]],
+  columns: [['Saturation (ms)', 34.5]],
   type: 'gauge'
 };
 
@@ -21,7 +21,7 @@ const color = {
 };
 
 const gauge = {
-  max: 200, // 100 is default,
+  max: 100, // 100 is default,
   label: {
     format: function(value, ratio) {
       return value;
