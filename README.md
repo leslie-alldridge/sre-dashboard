@@ -2,7 +2,7 @@
 
 ##Goals
 
-Create a dashboard where users can view SLO metrics.
+Create a dashboard where users can view SLO metrics. DONE
 
 An on call roster and help page will assist users
 
