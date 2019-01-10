@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
+import Autorenew from "@material-ui/icons/Autorenew";
 
 import Latency from "./Latency";
 import Traffic from "./Traffic";
@@ -11,6 +13,14 @@ const styles = theme => ({
   root: {
     display: "flex",
     padding: "15px"
+  },
+  button: {
+    margin: theme.spacing.unit,
+    fontWeight: 500
+  },
+  extendedIcon: {
+    marginRight: "10px",
+    fontWeight: 900
   }
 });
 
@@ -30,6 +40,10 @@ class Dashboard extends Component {
             </Grid>
           </div>
         </div>
+        <Button variant="contained" className={classes.button}>
+          <Autorenew className={classes.extendedIcon} />
+          Refresh
+        </Button>
       </React.Fragment>
     );
   }
