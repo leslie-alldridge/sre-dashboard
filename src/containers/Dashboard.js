@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import React, { Component } from "react";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
-import Latency from './Latency';
-import Traffic from './Traffic';
-import Errors from './Errors';
-import Saturation from './Saturation';
+import Latency from "./Latency";
+import Traffic from "./Traffic";
+import Errors from "./Errors";
+import Saturation from "./Saturation";
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    padding: '15px'
+    display: "flex",
+    padding: "15px"
   }
 });
 
@@ -20,7 +20,6 @@ class Dashboard extends Component {
 
     return (
       <React.Fragment>
-        <h2 class="title">Monitoring Service - Core Metrics</h2>
         <div className="dash">
           <div className={classes.root}>
             <Grid container spacing={24}>

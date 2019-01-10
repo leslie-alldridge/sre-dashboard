@@ -38,7 +38,8 @@ body {
 .title {
   color: #e0e8eb;
   font-weight: 600;
-  font-size: 44px !important;
+  font-size: 40px !important;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .gaugeTitle {
@@ -70,6 +71,11 @@ body {
 
 .c3-legend-item text {
   font-size: 18px !important;
+}
+
+.MuiTab-label-56 {
+  font-size: 14px !important;
+  font-weight: 600;
 }
 
 /* colors

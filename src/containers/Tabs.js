@@ -29,11 +29,32 @@ const styles = theme => ({
 
 class FullWidthTabs extends React.Component {
   state = {
-    value: 0
+    value: 0,
+    headerText: "Core Metrics"
   };
 
   handleChange = (event, value) => {
-    this.setState({ value });
+    if (value === 1) {
+      this.setState({
+        value,
+        headerText: "Objectives"
+      });
+    } else if (value === 2) {
+      this.setState({
+        value,
+        headerText: "On Call Roster"
+      });
+    } else if (value === 3) {
+      this.setState({
+        value,
+        headerText: "Help"
+      });
+    } else {
+      this.setState({
+        value,
+        headerText: "Core Metrics"
+      });
+    }
   };
 
   handleChangeIndex = index => {
@@ -44,34 +65,38 @@ class FullWidthTabs extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            variant="fullWidth"
+      <React.Fragment>
+        <h3 class="title">Monitoring Service - {this.state.headerText}</h3>
+        <div>
+          <AppBar position="static" color="default">
+            <Tabs
+              value={this.state.value}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Tab label="Dashboard" />
+              <Tab label="Objectives" />
+              <Tab label="Roster" />
+              <Tab label="Help" />
+            </Tabs>
+          </AppBar>
+          <SwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            index={this.state.value}
+            onChangeIndex={this.handleChangeIndex}
           >
-            <Tab label="Dashboard" />
-            <Tab label="Objectives" />
-            <Tab label="Roster" />
-            <Tab label="Help" />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-          index={this.state.value}
-          onChangeIndex={this.handleChangeIndex}
-        >
-          <TabContainer dir={theme.direction}><Dashboard/>
-          </TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-          <TabContainer dir={theme.direction}>Item Three</TabContainer>
-          <TabContainer dir={theme.direction}>content</TabContainer>
-          <TabContainer dir={theme.direction}>content 2</TabContainer>
-        </SwipeableViews>
-      </div>
+            <TabContainer dir={theme.direction}>
+              <Dashboard />
+            </TabContainer>
+            <TabContainer dir={theme.direction}>Item Two</TabContainer>
+            <TabContainer dir={theme.direction}>Item Three</TabContainer>
+            <TabContainer dir={theme.direction}>content</TabContainer>
+            <TabContainer dir={theme.direction}>content 2</TabContainer>
+          </SwipeableViews>
+        </div>
+      </React.Fragment>
     );
   }
 }
