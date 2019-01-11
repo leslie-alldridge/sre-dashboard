@@ -6,6 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
+import Goals from "./Goals";
 
 const styles = theme => ({
   button: {
@@ -42,27 +43,40 @@ class ControlledOpenSelect extends React.Component {
     const { classes } = this.props;
 
     return (
-      <form autoComplete="off">
-        <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="demo-controlled-open-select">Area</InputLabel>
-          <Select
-            open={this.state.open}
-            onClose={this.handleClose}
-            onOpen={this.handleOpen}
-            value={this.state.area}
-            onChange={this.handleChange}
-            inputProps={{
-              name: "area",
-              id: "demo-controlled-open-select"
-            }}
-          >
-            <MenuItem value={"Latency"}>Latency</MenuItem>
-            <MenuItem value={"Traffic"}>Traffic</MenuItem>
-            <MenuItem value={"Errors"}>Errors</MenuItem>
-            <MenuItem value={"Saturation"}>Saturation</MenuItem>
-          </Select>
-        </FormControl>
-      </form>
+      <div id="goal-form">
+        <form autoComplete="off">
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="demo-controlled-open-select">Area</InputLabel>
+            <Select
+              open={this.state.open}
+              onClose={this.handleClose}
+              onOpen={this.handleOpen}
+              value={this.state.area}
+              onChange={this.handleChange}
+              inputProps={{
+                name: "area",
+                id: "demo-controlled-open-select"
+              }}
+            >
+              <MenuItem value={"Latency"}>Latency</MenuItem>
+              <MenuItem value={"Traffic"}>Traffic</MenuItem>
+              <MenuItem value={"Errors"}>Errors</MenuItem>
+              <MenuItem value={"Saturation"}>Saturation</MenuItem>
+            </Select>
+          </FormControl>
+        </form>
+        {this.state.area == "Latency" ? (
+          <Goals target="Latency" />
+        ) : this.state.area == "Traffic" ? (
+          <Goals target="Traffic" />
+        ) : this.state.area == "Errors" ? (
+          <Goals target="Errors" />
+        ) : this.state.area == "Saturation" ? (
+          <Goals target="Saturation" />
+        ) : (
+          <Goals target="Please select an area above" />
+        )}
+      </div>
     );
   }
 }

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import C3Chart from 'react-c3js';
-import Grid from '@material-ui/core/Grid';
+import React, { Component } from "react";
+import C3Chart from "react-c3js";
+import Grid from "@material-ui/core/Grid";
 
 const data = {
-  columns: [['Latency (ms)', 87]],
-  type: 'gauge'
+  columns: [["Latency (ms)", 87]],
+  type: "gauge"
 };
 
 const size = {
@@ -12,9 +12,9 @@ const size = {
 };
 
 const color = {
-  pattern: ['#60B044', '#F6C600', '#F97600', '#FF0000'],
+  pattern: ["#60B044", "#F6C600", "#F97600", "#FF0000"],
   threshold: {
-    unit: 'value', // percentage is default
+    unit: "value", // percentage is default
     //            max: 200, // 100 is default
     values: [90, 100, 150, 180]
   }
@@ -29,7 +29,7 @@ const gauge = {
     show: false // to turn off the min/max labels.
   },
   values: [30, 60, 90, 100],
-  units: 'value'
+  units: "value"
 };
 
 // const style = {
@@ -41,7 +41,7 @@ class Latency extends Component {
     return (
       <Grid item xs={6}>
         <div id="chartBG">
-          <p class="gaugeTitle">Latency (last 60mins)</p>
+          <p className="gaugeTitle">Latency (last 60mins)</p>
           <C3Chart
             data={data}
             gauge={gauge}

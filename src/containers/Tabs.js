@@ -67,7 +67,7 @@ class FullWidthTabs extends React.Component {
 
     return (
       <React.Fragment>
-        <h3 class="title">Monitoring Service - {this.state.headerText}</h3>
+        <h3 className="title">Monitoring Service - {this.state.headerText}</h3>
         <div>
           <AppBar position="static" color="default">
             <Tabs

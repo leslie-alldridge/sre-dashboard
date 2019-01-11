@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import C3Chart from 'react-c3js';
-import Grid from '@material-ui/core/Grid';
+import React, { Component } from "react";
+import C3Chart from "react-c3js";
+import Grid from "@material-ui/core/Grid";
 
 const data = {
-  columns: [['Errors %', 1.89]],
-  type: 'gauge'
+  columns: [["Errors %", 1.89]],
+  type: "gauge"
 };
 
 const size = {
@@ -12,7 +12,7 @@ const size = {
 };
 
 const color = {
-  pattern: ['#60B044', '#F6C600', '#F97600', '#FF0000'],
+  pattern: ["#60B044", "#F6C600", "#F97600", "#FF0000"],
   threshold: {
     //            max: 200, // 100 is default
     values: [90, 100, 150, 180]
@@ -39,7 +39,7 @@ class Errors extends Component {
     return (
       <Grid item xs={6}>
         <div id="chartBG">
-          <p class="gaugeTitle">Errors (last 10mins)</p>
+          <p className="gaugeTitle">Errors (last 10mins)</p>
           <C3Chart
             data={data}
             gauge={gauge}

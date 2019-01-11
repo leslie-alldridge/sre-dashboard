@@ -98,6 +98,18 @@ body {
 #E0E8EB
 #394850
 #2B353A */
-#mainSwipe {
-  padding: none;
+
+#goal-text {
+  color: #394850;
+  font-size: 1.2em;
+}
+
+#goal-form {
+  background-color: #e0e8eb;
+  border-radius: 4px;
+}
+
+#edit-icon {
+  color: blue;
+  cursor: pointer;
 }
