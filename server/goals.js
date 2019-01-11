@@ -9,4 +9,11 @@ router.get("/all", (req, res) => {
   });
 });
 
+router.post("/save", (req, res) => {
+  const { area, section, value } = req.body;
+  goalsDB.saveGoals(area, section, value).then(data => {
+    res.json(data);
+  });
+});
+
 module.exports = router;

@@ -7,7 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Goals from "./Goals";
-import { getGoalsAction } from "../actions/goals";
+import { getGoalsAction, saveGoalsAction } from "../actions/goals";
 
 const styles = theme => ({
   button: {
@@ -71,13 +71,29 @@ class ControlledOpenSelect extends Component {
           </FormControl>
         </form>
         {this.state.area == "Latency" ? (
-          <Goals data={this.props.state.goals} target="Latency" />
+          <Goals
+            func={this.props.saveGoals}
+            data={this.props.state.goals}
+            target="Latency"
+          />
         ) : this.state.area == "Traffic" ? (
-          <Goals data={this.props.state.goals} target="Traffic" />
+          <Goals
+            func={this.props.saveGoals}
+            data={this.props.state.goals}
+            target="Traffic"
+          />
         ) : this.state.area == "Errors" ? (
-          <Goals data={this.props.state.goals} target="Errors" />
+          <Goals
+            func={this.props.saveGoals}
+            data={this.props.state.goals}
+            target="Errors"
+          />
         ) : this.state.area == "Saturation" ? (
-          <Goals data={this.props.state.goals} target="Saturation" />
+          <Goals
+            func={this.props.saveGoals}
+            data={this.props.state.goals}
+            target="Saturation"
+          />
         ) : (
           <Goals target="Please select an area above" />
         )}
@@ -100,6 +116,9 @@ function mapDispatchToProps(dispatch) {
   return {
     getGoals: () => {
       dispatch(getGoalsAction());
+    },
+    saveGoals: (area, section, value) => {
+      dispatch(saveGoalsAction(area, section, value));
     }
   };
 }
