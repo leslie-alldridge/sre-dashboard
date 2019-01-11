@@ -40,7 +40,12 @@ class Dashboard extends Component {
             </Grid>
           </div>
         </div>
-        <Button variant="contained" className={classes.button}>
+
+        <Button
+          id="refresh-button"
+          variant="contained"
+          className={classes.button}
+        >
           <Autorenew className={classes.extendedIcon} />
           Refresh
         </Button>
