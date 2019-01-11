@@ -34,6 +34,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sqlite3": "^4.0.4",
+    "superagent": "^4.1.0",
     "webpack": "^2.3.3"
   },
   "scripts": {

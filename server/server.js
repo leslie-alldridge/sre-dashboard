@@ -8,10 +8,20 @@ const passport = require("passport");
 const jwtSecret = require("../config/jwtConfig");
 const jwt = require("jsonwebtoken");
 const server = express();
-const bcrypt = require('bcryptjs');
+const bcrypt = require("bcryptjs");
 const BCRYPT_SALT_ROUNDS = 12;
+const goalRoutes = require("./goals");
 
-const { findUser, userResetReq, deleteUser, userExists, updateUser, updatePassword, findToken, updateUserPassword } = require("./db/users");
+const {
+  findUser,
+  userResetReq,
+  deleteUser,
+  userExists,
+  updateUser,
+  updatePassword,
+  findToken,
+  updateUserPassword
+} = require("./db/users");
 require("../config/passport");
 require("dotenv").config();
 
@@ -20,6 +30,8 @@ server.use(cors("*"));
 server.use(bodyParser.json());
 server.use(express.static(path.join(__dirname, "../public")));
 server.use(passport.initialize());
+
+server.use("/api/v1/goals", goalRoutes);
 
 server.post("/register", (req, res, next) => {
   passport.authenticate("register", (err, user, info) => {
@@ -95,7 +107,7 @@ server.post("/forgotpassword", (req, res, next) => {
     } else {
       const token = crypto.randomBytes(20).toString("hex");
       userResetReq(req.body.email, token, Date.now() + 360000);
-      console.log(process.env.EMAIL_ADDRESS)
+      console.log(process.env.EMAIL_ADDRESS);
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -153,8 +165,8 @@ server.delete("/deleteuser", (req, res, next) => {
   })(req, res, next);
 });
 
-server.put('/updateuser', (req, res, next) => {
-  passport.authenticate('jwt', { session: false }, (err, user, info) => {
+server.put("/updateuser", (req, res, next) => {
+  passport.authenticate("jwt", { session: false }, (err, user, info) => {
     if (err) {
       console.log(err);
     }
@@ -164,21 +176,25 @@ server.put('/updateuser', (req, res, next) => {
     } else {
       userExists(user.username).then(user => {
         if (user != null) {
-          updateUser(req.body.first_name,req.body.last_name,req.body.email, user.email)
-            .then(() => {
-              res.status(200).send({ auth: true, message: 'user updated' });
-            });
+          updateUser(
+            req.body.first_name,
+            req.body.last_name,
+            req.body.email,
+            user.email
+          ).then(() => {
+            res.status(200).send({ auth: true, message: "user updated" });
+          });
         } else {
-          console.log('no user exists in db to update');
-          res.status(404).json('no user exists in db to update');
+          console.log("no user exists in db to update");
+          res.status(404).json("no user exists in db to update");
         }
       });
     }
   })(req, res, next);
 });
 
-server.put('/updatepassword', (req, res, next) => {
-  passport.authenticate('jwt', { session: false }, (err, user, info) => {
+server.put("/updatepassword", (req, res, next) => {
+  passport.authenticate("jwt", { session: false }, (err, user, info) => {
     if (err) {
       console.log(err);
     }
@@ -188,60 +204,58 @@ server.put('/updatepassword', (req, res, next) => {
     } else {
       userExists(user.username).then(user => {
         if (user != null) {
-          console.log('user found in db');
+          console.log("user found in db");
           bcrypt
             .hash(req.body.password, BCRYPT_SALT_ROUNDS)
             .then(hashedPassword => {
-              
-            updatePassword(user.username, hashedPassword)
-            .then(() => {
-              console.log('password updated');
-              res
-                .status(200)
-                .send({ auth: true, message: 'password updated' });
+              updatePassword(user.username, hashedPassword).then(() => {
+                console.log("password updated");
+                res
+                  .status(200)
+                  .send({ auth: true, message: "password updated" });
+              });
             });
-          })
         } else {
-          console.log('no user exists in db to update');
-          res.status(404).json('no user exists in db to update');
+          console.log("no user exists in db to update");
+          res.status(404).json("no user exists in db to update");
         }
       });
     }
   })(req, res, next);
 });
 
-server.get('/reset', (req, res, next) => {
+server.get("/reset", (req, res, next) => {
   findToken(req.query.resetPasswordToken).then(user => {
     if (user == null) {
-      console.log('password reset link is invalid or has expired');
-      res.json('password reset link is invalid or has expired');
+      console.log("password reset link is invalid or has expired");
+      res.json("password reset link is invalid or has expired");
     } else {
       res.status(200).send({
         username: user.username,
-        message: 'password reset link a-ok',
+        message: "password reset link a-ok"
       });
     }
   });
 });
 
-server.put('/updatepasswordviaemail', (req, res, next) => {
+server.put("/updatepasswordviaemail", (req, res, next) => {
   userExists(req.body.username).then(user => {
     if (user != null) {
-      console.log('user exists in db');
+      console.log("user exists in db");
       bcrypt
         .hash(req.body.password, BCRYPT_SALT_ROUNDS)
         .then(hashedPassword => {
-          updateUserPassword(req.body.username, hashedPassword)
+          updateUserPassword(req.body.username, hashedPassword);
         })
-        .then((data) => {
-          console.log('password updated');
+        .then(data => {
+          console.log("password updated");
           console.log(data);
-          
-          res.status(200).send({ message: 'password updated' });
+
+          res.status(200).send({ message: "password updated" });
         });
     } else {
-      console.log('no user exists in db to update');
-      res.status(404).json('no user exists in db to update');
+      console.log("no user exists in db to update");
+      res.status(404).json("no user exists in db to update");
     }
   });
 });
