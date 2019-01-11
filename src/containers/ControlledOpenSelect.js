@@ -71,13 +71,13 @@ class ControlledOpenSelect extends Component {
           </FormControl>
         </form>
         {this.state.area == "Latency" ? (
-          <Goals target="Latency" />
+          <Goals data={this.props.state.goals} target="Latency" />
         ) : this.state.area == "Traffic" ? (
-          <Goals target="Traffic" />
+          <Goals data={this.props.state.goals} target="Traffic" />
         ) : this.state.area == "Errors" ? (
-          <Goals target="Errors" />
+          <Goals data={this.props.state.goals} target="Errors" />
         ) : this.state.area == "Saturation" ? (
-          <Goals target="Saturation" />
+          <Goals data={this.props.state.goals} target="Saturation" />
         ) : (
           <Goals target="Please select an area above" />
         )}

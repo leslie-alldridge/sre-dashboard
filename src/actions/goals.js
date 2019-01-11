@@ -5,6 +5,8 @@ export function getGoalsAction() {
     dispatch(loadingGoals(true));
     return request("get", "/goals/all")
       .then(response => {
+        console.log(response);
+
         dispatch(goalsFetchDataSuccess(response.body));
       })
       .catch(err => dispatch(itemsHasErrored(err)));
@@ -21,6 +23,7 @@ export function loadingGoals(status) {
 export function goalsFetchDataSuccess(goals) {
   return {
     type: "GOALS_FETCH_DATA_SUCCESS",
+    isFetching: false,
     goals
   };
 }

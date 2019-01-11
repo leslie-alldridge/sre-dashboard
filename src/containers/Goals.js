@@ -64,6 +64,7 @@ class Goals extends Component {
 
   render() {
     const { classes } = this.props;
+    console.log(this.props.data);
 
     return (
       <div>
@@ -77,46 +78,109 @@ class Goals extends Component {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <CustomTableCell>{this.props.target}</CustomTableCell>
+                  <CustomTableCell>Area</CustomTableCell>
                   <CustomTableCell align="right">Healthy</CustomTableCell>
                   <CustomTableCell align="right">Low Alert</CustomTableCell>
                   <CustomTableCell align="right">High Alert</CustomTableCell>
                 </TableRow>
               </TableHead>
+
               <TableBody>
-                <TableRow className={classes.row}>
-                  <CustomTableCell component="th" scope="row">
-                    test
-                  </CustomTableCell>
-                  <CustomTableCell align="right">
-                    {this.state.editView !== "healthy" ? (
-                      230
-                    ) : (
-                      <React.Fragment>
-                        <input
-                          onChange={this.handleInputChange}
-                          type="number"
-                        />
-                        <SaveIcon
-                          name="healthy"
-                          onClick={() => {
-                            this.handleSave("healthy");
-                          }}
-                          id="save-icon"
-                        />
-                      </React.Fragment>
-                    )}
-                    <EditIcon
-                      name="healthy"
-                      onClick={() => {
-                        this.handleEdit("healthy");
-                      }}
-                      id="edit-icon"
-                    />
-                  </CustomTableCell>
-                  <CustomTableCell align="right">22</CustomTableCell>
-                  <CustomTableCell align="right">23</CustomTableCell>
-                </TableRow>
+                {this.props.data.goals.map(cell => {
+                  if (cell.area === this.props.target) {
+                    return (
+                      <TableRow className={classes.row}>
+                        <CustomTableCell component="th" scope="row">
+                          {cell.area}
+                        </CustomTableCell>
+                        <CustomTableCell align="right">
+                          {this.state.editView !== "healthy" ? (
+                            <React.Fragment>
+                              {cell.healthy}{" "}
+                              <EditIcon
+                                name="healthy"
+                                onClick={() => {
+                                  this.handleEdit("healthy");
+                                }}
+                                id="edit-icon"
+                              />{" "}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <input
+                                onChange={this.handleInputChange}
+                                type="number"
+                              />
+                              <SaveIcon
+                                name="healthy"
+                                onClick={() => {
+                                  this.handleSave("healthy");
+                                }}
+                                id="save-icon"
+                              />
+                            </React.Fragment>
+                          )}
+                        </CustomTableCell>
+                        <CustomTableCell align="right">
+                          {this.state.editView !== "low" ? (
+                            <React.Fragment>
+                              {cell.low}{" "}
+                              <EditIcon
+                                name="low"
+                                onClick={() => {
+                                  this.handleEdit("low");
+                                }}
+                                id="edit-icon"
+                              />{" "}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <input
+                                onChange={this.handleInputChange}
+                                type="number"
+                              />
+                              <SaveIcon
+                                name="low"
+                                onClick={() => {
+                                  this.handleSave("low");
+                                }}
+                                id="save-icon"
+                              />
+                            </React.Fragment>
+                          )}
+                        </CustomTableCell>
+                        <CustomTableCell align="right">
+                          {this.state.editView !== "high" ? (
+                            <React.Fragment>
+                              {cell.high}{" "}
+                              <EditIcon
+                                name="high"
+                                onClick={() => {
+                                  this.handleEdit("high");
+                                }}
+                                id="edit-icon"
+                              />{" "}
+                            </React.Fragment>
+                          ) : (
+                            <React.Fragment>
+                              <input
+                                onChange={this.handleInputChange}
+                                type="number"
+                              />
+                              <SaveIcon
+                                name="high"
+                                onClick={() => {
+                                  this.handleSave("high");
+                                }}
+                                id="save-icon"
+                              />
+                            </React.Fragment>
+                          )}
+                        </CustomTableCell>
+                      </TableRow>
+                    );
+                  }
+                })}
               </TableBody>
             </Table>
           </Paper>
