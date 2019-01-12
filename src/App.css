@@ -117,3 +117,11 @@ body {
 #loading-text {
   color: white;
 }
+
+.ninety-title {
+  margin: 10% !important;
+  color: #e0e8eb;
+  font-weight: 600;
+  font-size: 20px !important;
+  font-family: Arial, Helvetica, sans-serif;
+}

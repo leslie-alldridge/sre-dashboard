@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -9,7 +10,6 @@ import Latency from "./Latency";
 import Traffic from "./Traffic";
 import Errors from "./Errors";
 import Saturation from "./Saturation";
-
 import Loading from "./Loading";
 
 const styles = theme => ({
@@ -33,16 +33,6 @@ class Dashboard extends Component {
     trafficData: "",
     errorData: "",
     saturationData: ""
-  };
-  componentDidMount = () => {
-    // axios.get("http://localhost:4000/healthcheck").then(res => {
-    //   this.setState({
-    //     latencyData: res.data.latency,
-    //     trafficData: res.data.traffic,
-    //     errorData: res.data.errors,
-    //     saturationData: res.data.saturation
-    //   });
-    // });
   };
 
   render() {

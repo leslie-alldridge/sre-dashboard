@@ -1,43 +1,40 @@
 import React, { Component } from "react";
 import C3Chart from "react-c3js";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+
 import Grid from "@material-ui/core/Grid";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
-// const data = {
-//   columns: [["Traffic (rpm 000's)", 741]],
-//   type: "gauge"
-// };
-
-// const size = {
-//   height: 220
-// };
-
-// const color = {
-//   pattern: ["#60B044", "#F6C600", "#F97600", "#CE4E5D"],
-//   threshold: {
-//     unit: "value", // percentage is default
-//     //            max: 200, // 100 is default
-//     values: [90, 100, 150, 180]
-//   }
-// };
-
-// const gauge = {
-//   max: 800, // 100 is default,
-//   label: {
-//     format: function(value, ratio) {
-//       return value;
-//     },
-//     show: false // to turn off the min/max labels.
-//   },
-//   values: [30, 60, 90, 100],
-//   units: "value"
-// };
-
-// const style = {
-//   fontSize: '3em'
-// };
+const styles = theme => ({
+  root: {
+    width: "100%",
+    overflowX: "auto",
+    marginTop: "3px"
+  },
+  table: {
+    minWidth: 700,
+    maxHeight: 220,
+    marginTop: "5px"
+  }
+});
 
 class Traffic extends Component {
+  state = {
+    clicked: false
+  };
+  onClick = () => {
+    this.setState({
+      clicked: !this.state.clicked
+    });
+  };
   render() {
+    const { classes } = this.props;
     const size = {
       height: 220
     };
@@ -76,19 +73,69 @@ class Traffic extends Component {
     };
     return (
       <Grid item xs={6}>
-        <div id="chartBG">
-          <p className="gaugeTitle">Traffic (24 hours)</p>
-          <C3Chart
-            data={data}
-            gauge={gauge}
-            color={color}
-            size={size}
-            // style={style}
-          />
+        <div className="animated fadeIn" onClick={this.onClick} id="chartBG">
+          {!this.state.clicked && (
+            <React.Fragment>
+              <p className="gaugeTitle">Traffic (24 hours)</p>
+              <C3Chart data={data} gauge={gauge} color={color} size={size} />
+            </React.Fragment>
+          )}
+          {this.state.clicked && (
+            <div className="animated fadeIn">
+              {/* <p className="ninety-title">99th Percentile</p> */}
+              <hr />
+              <span className="ninety-title">99th Percentile</span>
+
+              <Paper className={classes.root}>
+                <Table className={classes.table}>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>URL</TableCell>
+                      <TableCell align="right">Traffic</TableCell>
+                      <TableCell align="right">Count</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell component="th" scope="row">
+                        payroll.xero.com
+                      </TableCell>
+                      <TableCell align="right">150k</TableCell>
+                      <TableCell align="right">200</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row">
+                        projects.xero.com
+                      </TableCell>
+                      <TableCell align="right">120k</TableCell>
+                      <TableCell align="right">102</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row">
+                        go.xero.com/Bank/BankRec.aspx
+                      </TableCell>
+                      <TableCell align="right">105k</TableCell>
+                      <TableCell align="right">45</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell component="th" scope="row">
+                        go.xero.com/AccountsReceivable
+                      </TableCell>
+                      <TableCell align="right">90k</TableCell>
+                      <TableCell align="right">21</TableCell>
+                    </TableRow>
+                  </TableBody>
+                </Table>
+              </Paper>
+            </div>
+          )}
         </div>
       </Grid>
     );
   }
 }
+Traffic.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 
-export default Traffic;
+export default withStyles(styles)(Traffic);
