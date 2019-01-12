@@ -42,25 +42,31 @@ class FullWidthTabs extends React.Component {
   };
 
   componentDidMount = () => {
-    axios.get("http://localhost:4000/healthcheck").then(res => {
-      this.setState({
-        latencyData: res.data.latency,
-        trafficData: res.data.traffic,
-        errorData: res.data.errors,
-        saturationData: res.data.saturation
-      });
-    });
+    axios
+      .get("http://localhost:4000/healthcheck")
+      .then(res => {
+        this.setState({
+          latencyData: res.data.latency,
+          trafficData: res.data.traffic,
+          errorData: res.data.errors,
+          saturationData: res.data.saturation
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   handleRefresh = () => {
-    axios.get("http://localhost:4000/healthcheck").then(res => {
-      this.setState({
-        latencyData: res.data.latency,
-        trafficData: res.data.traffic,
-        errorData: res.data.errors,
-        saturationData: res.data.saturation
-      });
-    });
+    axios
+      .get("http://localhost:4000/healthcheck")
+      .then(res => {
+        this.setState({
+          latencyData: res.data.latency,
+          trafficData: res.data.traffic,
+          errorData: res.data.errors,
+          saturationData: res.data.saturation
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   handleChange = (event, value) => {

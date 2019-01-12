@@ -18,9 +18,7 @@ function Help(props) {
   return (
     <div>
       <Paper className={classes.root} elevation={1}>
-        <Typography variant="h5" component="h3">
-          Dashboard
-        </Typography>
+        <Typography component="h3">Dashboard</Typography>
 
         <Typography component="p">
           The Dashboard tab displays the Four Golden Signals measured against
@@ -28,9 +26,8 @@ function Help(props) {
           funneled into the graphs. You can refresh the Dashboard to ensure the
           most up to date information displays.
         </Typography>
-        <Typography variant="h5" component="h3">
-          Objectives
-        </Typography>
+        <hr />
+        <Typography component="h3">Objectives</Typography>
 
         <Typography component="p">
           In the Objectives tab you can select and save new goals. Healthy will
@@ -39,9 +36,8 @@ function Help(props) {
           gradients in between these levels will also display. Goals are saved
           to a SQL database and can be updated at any time.
         </Typography>
-        <Typography variant="h5" component="h3">
-          Roster & Releases
-        </Typography>
+        <hr />
+        <Typography component="h3">Roster & Releases</Typography>
 
         <Typography component="p">
           To the left of this page you'll see the on-call roster. This is a four
@@ -50,9 +46,8 @@ function Help(props) {
           releases via the GoLang API and displays them in order of latest
           released.
         </Typography>
-        <Typography variant="h5" component="h3">
-          Other Requests?
-        </Typography>
+        <hr />
+        <Typography component="h3">Other Requests?</Typography>
 
         <Typography component="p">
           This was created over 2 days to support my application for a role in
@@ -61,6 +56,7 @@ function Help(props) {
           them at a later date. I learned a lot over this project and had a lot
           of fun creating this.
         </Typography>
+        <hr />
       </Paper>
     </div>
   );
