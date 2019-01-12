@@ -113,3 +113,7 @@ body {
   color: blue;
   cursor: pointer;
 }
+
+#loading-text {
+  color: white;
+}

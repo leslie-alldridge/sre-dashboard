@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -8,6 +9,8 @@ import Latency from "./Latency";
 import Traffic from "./Traffic";
 import Errors from "./Errors";
 import Saturation from "./Saturation";
+
+import Loading from "./Loading";
 
 const styles = theme => ({
   root: {
@@ -27,19 +30,22 @@ const styles = theme => ({
 class Dashboard extends Component {
   render() {
     const { classes } = this.props;
-
+    console.log(this.props);
     return (
       <React.Fragment>
-        <div className="dash">
-          <div className={classes.root}>
-            <Grid container spacing={24}>
-              <Latency />
-              <Traffic />
-              <Errors />
-              <Saturation />
-            </Grid>
+        {this.props.state.goals.isFetching == true && <Loading />}
+        {!this.props.state.goals.isFetching && (
+          <div className="dash">
+            <div className={classes.root}>
+              <Grid container spacing={24}>
+                <Latency goalData={this.props.state.goals.goals} />
+                <Traffic />
+                <Errors />
+                <Saturation />
+              </Grid>
+            </div>
           </div>
-        </div>
+        )}
 
         <Button
           id="refresh-button"
@@ -54,4 +60,12 @@ class Dashboard extends Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(Dashboard);
+function mapStateToProps(state) {
+  return {
+    state: state
+  };
+}
+
+export default withStyles(styles, { withTheme: true })(
+  connect(mapStateToProps)(Dashboard)
+);

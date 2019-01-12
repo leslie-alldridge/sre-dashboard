@@ -1,4 +1,4 @@
-export default function goals(state = [], action) {
+export default function goals(state = { isFetching: true }, action) {
   switch (action.type) {
     case "GOALS_LOADING":
       return {
