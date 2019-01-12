@@ -63,6 +63,7 @@ class Dashboard extends Component {
                 />
               </Grid>
             </div>
+            <br />
           </div>
         )}
 

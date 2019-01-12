@@ -70,7 +70,7 @@ class FullWidthTabs extends React.Component {
     } else if (value === 2) {
       this.setState({
         value,
-        headerText: "On Call Roster"
+        headerText: "Roster & Releases"
       });
     } else if (value === 3) {
       this.setState({
@@ -106,7 +106,7 @@ class FullWidthTabs extends React.Component {
             >
               <Tab label="Dashboard" />
               <Tab label="Objectives" />
-              <Tab label="Roster" />
+              <Tab label="Roster & Releases" />
               <Tab label="Help" />
             </Tabs>
           </AppBar>

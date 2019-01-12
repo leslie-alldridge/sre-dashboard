@@ -112,6 +112,14 @@ body {
 #edit-icon {
   color: blue;
   cursor: pointer;
+  max-height: 18px;
+}
+
+#save-icon {
+  color: red;
+  cursor: pointer;
+  max-height: 22px;
+  margin-top: 5px;
 }
 
 #loading-text {
