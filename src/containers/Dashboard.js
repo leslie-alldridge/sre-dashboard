@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Autorenew from "@material-ui/icons/Autorenew";
+import axios from "axios";
 
 import Latency from "./Latency";
 import Traffic from "./Traffic";
@@ -28,6 +29,23 @@ const styles = theme => ({
 });
 
 class Dashboard extends Component {
+  state = {
+    latencyData: "",
+    trafficData: "",
+    errorData: "",
+    saturationData: ""
+  };
+  componentDidMount = () => {
+    // axios.get("http://localhost:4000/healthcheck").then(res => {
+    //   this.setState({
+    //     latencyData: res.data.latency,
+    //     trafficData: res.data.traffic,
+    //     errorData: res.data.errors,
+    //     saturationData: res.data.saturation
+    //   });
+    // });
+  };
+
   render() {
     const { classes } = this.props;
     console.log(this.props);
@@ -38,10 +56,22 @@ class Dashboard extends Component {
           <div className="dash">
             <div className={classes.root}>
               <Grid container spacing={24}>
-                <Latency goalData={this.props.state.goals.goals} />
-                <Traffic />
-                <Errors />
-                <Saturation />
+                <Latency
+                  current={this.props.latencyData}
+                  goalData={this.props.state.goals.goals}
+                />
+                <Traffic
+                  current={this.props.trafficData}
+                  goalData={this.props.state.goals.goals}
+                />
+                <Errors
+                  current={this.props.errorData}
+                  goalData={this.props.state.goals.goals}
+                />
+                <Saturation
+                  current={this.props.saturationData}
+                  goalData={this.props.state.goals.goals}
+                />
               </Grid>
             </div>
           </div>
@@ -51,6 +81,7 @@ class Dashboard extends Component {
           id="refresh-button"
           variant="contained"
           className={classes.button}
+          onClick={this.props.handleRefresh}
         >
           <Autorenew className={classes.extendedIcon} />
           Refresh

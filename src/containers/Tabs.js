@@ -8,6 +8,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Dashboard from "./Dashboard";
 import Objectives from "./Objectives";
+import axios from "axios";
 
 function TabContainer({ children, dir }) {
   return (
@@ -31,7 +32,33 @@ const styles = theme => ({
 class FullWidthTabs extends React.Component {
   state = {
     value: 0,
-    headerText: "Core Metrics"
+    headerText: "Core Metrics",
+    latencyData: "",
+    trafficData: "",
+    errorData: "",
+    saturationData: ""
+  };
+
+  componentDidMount = () => {
+    axios.get("http://localhost:4000/healthcheck").then(res => {
+      this.setState({
+        latencyData: res.data.latency,
+        trafficData: res.data.traffic,
+        errorData: res.data.errors,
+        saturationData: res.data.saturation
+      });
+    });
+  };
+
+  handleRefresh = () => {
+    axios.get("http://localhost:4000/healthcheck").then(res => {
+      this.setState({
+        latencyData: res.data.latency,
+        trafficData: res.data.traffic,
+        errorData: res.data.errors,
+        saturationData: res.data.saturation
+      });
+    });
   };
 
   handleChange = (event, value) => {
@@ -89,7 +116,13 @@ class FullWidthTabs extends React.Component {
             onChangeIndex={this.handleChangeIndex}
           >
             <TabContainer dir={theme.direction}>
-              <Dashboard />
+              <Dashboard
+                handleRefresh={this.handleRefresh}
+                latencyData={this.state.latencyData}
+                trafficData={this.state.trafficData}
+                errorData={this.state.errorData}
+                saturationData={this.state.saturationData}
+              />
             </TabContainer>
             <TabContainer dir={theme.direction}>
               <Objectives />

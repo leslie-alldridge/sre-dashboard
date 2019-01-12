@@ -38,6 +38,42 @@ const gauge = {
 
 class Saturation extends Component {
   render() {
+    const size = {
+      height: 220
+    };
+    console.log(this.props.current);
+    const data = {
+      columns: [["Saturation (ms)", this.props.current]],
+      type: "gauge"
+    };
+    const color = {
+      pattern: ["#60B044", "#F6C600", "#F97600", "#FF0000"],
+      threshold: {
+        unit: "value", // percentage is default
+        //            max: 200, // 100 is default
+        values: [
+          this.props.goalData[3].healthy,
+          this.props.goalData[3].low,
+          this.props.goalData[3].high
+        ]
+      }
+    };
+
+    const gauge = {
+      max: 100, // 100 is default,
+      label: {
+        format: function(value, ratio) {
+          return value;
+        },
+        show: false // to turn off the min/max labels.
+      },
+      values: [
+        this.props.goalData[3].healthy,
+        this.props.goalData[3].low,
+        this.props.goalData[3].high
+      ],
+      units: "value"
+    };
     return (
       <Grid item xs={6}>
         <div id="chartBG">

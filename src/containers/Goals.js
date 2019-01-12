@@ -70,7 +70,6 @@ class Goals extends Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this.props.data);
 
     return (
       <div>

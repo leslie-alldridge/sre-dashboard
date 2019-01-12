@@ -25,6 +25,11 @@ class Home extends Component {
           buttonStyle={loginButton}
           link={`/login`}
         />
+        <LinkButtons
+          buttonText={`Dash`}
+          buttonStyle={loginButton}
+          link={`/dashboard`}
+        />
       </div>
     );
   }
