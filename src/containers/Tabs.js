@@ -8,6 +8,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Dashboard from "./Dashboard";
 import Objectives from "./Objectives";
+import RosterRelease from "./RosterRelease";
 import axios from "axios";
 
 function TabContainer({ children, dir }) {
@@ -127,7 +128,9 @@ class FullWidthTabs extends React.Component {
             <TabContainer dir={theme.direction}>
               <Objectives />
             </TabContainer>
-            <TabContainer dir={theme.direction}>Item Three</TabContainer>
+            <TabContainer dir={theme.direction}>
+              <RosterRelease />
+            </TabContainer>
             <TabContainer dir={theme.direction}>content</TabContainer>
             <TabContainer dir={theme.direction}>content 2</TabContainer>
           </SwipeableViews>

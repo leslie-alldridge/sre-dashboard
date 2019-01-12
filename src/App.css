@@ -135,6 +135,26 @@ body {
 }
 
 #update-time {
-  color: white;
+  color: #e0e8eb;
   padding-left: 5px;
+}
+
+.roster-title {
+  color: #e0e8eb;
+  text-align: left;
+}
+
+#roster-panel {
+  min-width: 45%;
+  margin-right: 3%;
+}
+
+#roster-release {
+  display: flex;
+  width: 100%;
+}
+
+#roster-title-2 {
+  margin-left: 38% !important;
+  color: #e0e8eb;
 }
