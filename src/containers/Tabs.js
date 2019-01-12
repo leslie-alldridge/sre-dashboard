@@ -10,6 +10,7 @@ import Dashboard from "./Dashboard";
 import Objectives from "./Objectives";
 import RosterRelease from "./RosterRelease";
 import axios from "axios";
+import Help from "./Help";
 
 function TabContainer({ children, dir }) {
   return (
@@ -131,8 +132,9 @@ class FullWidthTabs extends React.Component {
             <TabContainer dir={theme.direction}>
               <RosterRelease />
             </TabContainer>
-            <TabContainer dir={theme.direction}>content</TabContainer>
-            <TabContainer dir={theme.direction}>content 2</TabContainer>
+            <TabContainer dir={theme.direction}>
+              <Help />
+            </TabContainer>
           </SwipeableViews>
         </div>
       </React.Fragment>

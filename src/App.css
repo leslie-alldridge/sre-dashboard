@@ -142,19 +142,23 @@ body {
 .roster-title {
   color: #e0e8eb;
   text-align: left;
+  font-size: 1.2em;
 }
 
 #roster-panel {
-  min-width: 45%;
   margin-right: 3%;
 }
 
 #roster-release {
   display: flex;
-  width: 100%;
 }
 
-#roster-title-2 {
-  margin-left: 38% !important;
-  color: #e0e8eb;
+#roster {
+  min-width: 50%;
+}
+
+#test {
+  min-width: 300px;
+  padding: 0;
+  padding-left: 5%;
 }

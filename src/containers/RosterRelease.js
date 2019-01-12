@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+
 import Roster from "./Roster";
+import Releases from "./Releases";
+
 class RosterRelease extends Component {
   render() {
     return (
-      <div>
-        <div id="roster-release">
+      <div id="roster-release">
+        <div id="roster">
           <p className="roster-title">Weekly On Call Roster</p>
-          <p id="roster-title-2">Latest Releases</p>
+          <Roster />
         </div>
-        <div id="roster-release">
-          <Roster />
-          <Roster />
+        <div id="roster">
+          <p className="roster-title">Latest Releases</p>
+          <Releases />
         </div>
       </div>
     );
