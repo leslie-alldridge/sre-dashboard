@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import TimeAgo from "react-timeago";
+
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -76,6 +78,12 @@ class Dashboard extends Component {
           <Autorenew className={classes.extendedIcon} />
           Refresh
         </Button>
+        <br />
+        <span>
+          <i id="update-time">
+            Last updated: <TimeAgo date={Date.now()} />
+          </i>
+        </span>
       </React.Fragment>
     );
   }

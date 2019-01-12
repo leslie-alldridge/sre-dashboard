@@ -133,3 +133,8 @@ body {
   font-size: 20px !important;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#update-time {
+  color: white;
+  padding-left: 5px;
+}
