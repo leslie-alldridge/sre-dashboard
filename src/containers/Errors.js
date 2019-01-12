@@ -41,7 +41,7 @@ class Errors extends Component {
     };
     console.log(this.props.current);
     const data = {
-      columns: [["Errors %", this.props.current]],
+      columns: [["Errors %", this.props.current.toFixed(2)]],
       type: "gauge"
     };
     const color = {

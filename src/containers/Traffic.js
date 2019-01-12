@@ -43,7 +43,7 @@ class Traffic extends Component {
     };
     console.log(this.props.current);
     const data = {
-      columns: [["Traffic (rpm 000's)", this.props.current]],
+      columns: [["Traffic (rpm 000's)", this.props.current.toFixed(1)]],
       type: "gauge"
     };
     const color = {

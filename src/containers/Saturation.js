@@ -43,7 +43,7 @@ class Saturation extends Component {
     };
     console.log(this.props.current);
     const data = {
-      columns: [["Saturation (ms)", this.props.current]],
+      columns: [["Saturation (ms)", this.props.current.toFixed(2)]],
       type: "gauge"
     };
     const color = {

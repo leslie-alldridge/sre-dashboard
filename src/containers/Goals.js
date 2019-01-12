@@ -95,7 +95,7 @@ class Goals extends Component {
                   this.props.data.goals.map(cell => {
                     if (cell.area === this.props.target) {
                       return (
-                        <TableRow className={classes.row}>
+                        <TableRow key={cell.area} className={classes.row}>
                           <CustomTableCell component="th" scope="row">
                             {cell.area}
                           </CustomTableCell>

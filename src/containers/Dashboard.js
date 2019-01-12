@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Autorenew from "@material-ui/icons/Autorenew";
-import axios from "axios";
 
 import Latency from "./Latency";
 import Traffic from "./Traffic";
