@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UpdateProfile
+    debug={true}
+    match={
+      Object {
+        "params": Object {
+          "username": "leslie",
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HeaderBar
+          title={
+            Object {
+              "pageTitle": "Update User Profile Screen",
+            }
+          }
+        />,
+        <p
+          style={
+            Object {
+              "fontSize": "24px",
+              "margin": "1em",
+            }
+          }
+        >
+          There was a problem accessing your data. Please go login again.
+        </p>,
+        <LinkButtons
+          buttonText="Go Login"
+          link="/login"
+          style={
+            Object {
+              "background": "royalblue",
+              "margin": "1em",
+              "padding": "1em",
+            }
+          }
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "title": Object {
+            "pageTitle": "Update User Profile Screen",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "There was a problem accessing your data. Please go login again.",
+          "style": Object {
+            "fontSize": "24px",
+            "margin": "1em",
+          },
+        },
+        "ref": null,
+        "rendered": "There was a problem accessing your data. Please go login again.",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "buttonText": "Go Login",
+          "link": "/login",
+          "style": Object {
+            "background": "royalblue",
+            "margin": "1em",
+            "padding": "1em",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HeaderBar
+            title={
+              Object {
+                "pageTitle": "Update User Profile Screen",
+              }
+            }
+          />,
+          <p
+            style={
+              Object {
+                "fontSize": "24px",
+                "margin": "1em",
+              }
+            }
+          >
+            There was a problem accessing your data. Please go login again.
+          </p>,
+          <LinkButtons
+            buttonText="Go Login"
+            link="/login"
+            style={
+              Object {
+                "background": "royalblue",
+                "margin": "1em",
+                "padding": "1em",
+              }
+            }
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "title": Object {
+              "pageTitle": "Update User Profile Screen",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "There was a problem accessing your data. Please go login again.",
+            "style": Object {
+              "fontSize": "24px",
+              "margin": "1em",
+            },
+          },
+          "ref": null,
+          "rendered": "There was a problem accessing your data. Please go login again.",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "buttonText": "Go Login",
+            "link": "/login",
+            "style": Object {
+              "background": "royalblue",
+              "margin": "1em",
+              "padding": "1em",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

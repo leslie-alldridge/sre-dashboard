@@ -1,0 +1,765 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyComponent should render correctly in "debug" mode 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Register
+    debug={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <HeaderBar
+          title={
+            Object {
+              "pageTitle": "Register Screen",
+            }
+          }
+        />,
+        <form
+          className="profile-form"
+          onSubmit={[Function]}
+        >
+          <TextField
+            id="first_name"
+            label="first_name"
+            onChange={[Function]}
+            placeholder="First Name"
+            required={false}
+            select={false}
+            style={
+              Object {
+                "margin": ".5em",
+              }
+            }
+            value=""
+          />
+          <TextField
+            id="last_name"
+            label="last_name"
+            onChange={[Function]}
+            placeholder="Last Name"
+            required={false}
+            select={false}
+            style={
+              Object {
+                "margin": ".5em",
+              }
+            }
+            value=""
+          />
+          <TextField
+            id="email"
+            label="email"
+            onChange={[Function]}
+            placeholder="Email"
+            required={false}
+            select={false}
+            style={
+              Object {
+                "margin": ".5em",
+              }
+            }
+            value=""
+          />
+          <TextField
+            id="username"
+            label="username"
+            onChange={[Function]}
+            placeholder="Username"
+            required={false}
+            select={false}
+            style={
+              Object {
+                "margin": ".5em",
+              }
+            }
+            value=""
+          />
+          <TextField
+            id="password"
+            label="password"
+            onChange={[Function]}
+            placeholder="Password"
+            required={false}
+            select={false}
+            style={
+              Object {
+                "margin": ".5em",
+              }
+            }
+            type="password"
+            value=""
+          />
+          <SubmitButtons
+            buttonStyle={
+              Object {
+                "background": "green",
+                "margin": "1em",
+                "padding": "1em",
+              }
+            }
+            buttonText="Register"
+          />
+        </form>,
+        false,
+        false,
+        <LinkButtons
+          buttonStyle={
+            Object {
+              "background": "mediumpurple",
+              "margin": "1em",
+              "padding": "1em",
+            }
+          }
+          buttonText="Go Home"
+          link="/"
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "title": Object {
+            "pageTitle": "Register Screen",
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TextField
+              id="first_name"
+              label="first_name"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />,
+            <TextField
+              id="last_name"
+              label="last_name"
+              onChange={[Function]}
+              placeholder="Last Name"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />,
+            <TextField
+              id="email"
+              label="email"
+              onChange={[Function]}
+              placeholder="Email"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />,
+            <TextField
+              id="username"
+              label="username"
+              onChange={[Function]}
+              placeholder="Username"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />,
+            <TextField
+              id="password"
+              label="password"
+              onChange={[Function]}
+              placeholder="Password"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              type="password"
+              value=""
+            />,
+            <SubmitButtons
+              buttonStyle={
+                Object {
+                  "background": "green",
+                  "margin": "1em",
+                  "padding": "1em",
+                }
+              }
+              buttonText="Register"
+            />,
+          ],
+          "className": "profile-form",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "id": "first_name",
+              "label": "first_name",
+              "onChange": [Function],
+              "placeholder": "First Name",
+              "required": false,
+              "select": false,
+              "style": Object {
+                "margin": ".5em",
+              },
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "id": "last_name",
+              "label": "last_name",
+              "onChange": [Function],
+              "placeholder": "Last Name",
+              "required": false,
+              "select": false,
+              "style": Object {
+                "margin": ".5em",
+              },
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "id": "email",
+              "label": "email",
+              "onChange": [Function],
+              "placeholder": "Email",
+              "required": false,
+              "select": false,
+              "style": Object {
+                "margin": ".5em",
+              },
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "id": "username",
+              "label": "username",
+              "onChange": [Function],
+              "placeholder": "Username",
+              "required": false,
+              "select": false,
+              "style": Object {
+                "margin": ".5em",
+              },
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "id": "password",
+              "label": "password",
+              "onChange": [Function],
+              "placeholder": "Password",
+              "required": false,
+              "select": false,
+              "style": Object {
+                "margin": ".5em",
+              },
+              "type": "password",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "buttonStyle": Object {
+                "background": "green",
+                "margin": "1em",
+                "padding": "1em",
+              },
+              "buttonText": "Register",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "form",
+      },
+      false,
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "buttonStyle": Object {
+            "background": "mediumpurple",
+            "margin": "1em",
+            "padding": "1em",
+          },
+          "buttonText": "Go Home",
+          "link": "/",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <HeaderBar
+            title={
+              Object {
+                "pageTitle": "Register Screen",
+              }
+            }
+          />,
+          <form
+            className="profile-form"
+            onSubmit={[Function]}
+          >
+            <TextField
+              id="first_name"
+              label="first_name"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />
+            <TextField
+              id="last_name"
+              label="last_name"
+              onChange={[Function]}
+              placeholder="Last Name"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />
+            <TextField
+              id="email"
+              label="email"
+              onChange={[Function]}
+              placeholder="Email"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />
+            <TextField
+              id="username"
+              label="username"
+              onChange={[Function]}
+              placeholder="Username"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              value=""
+            />
+            <TextField
+              id="password"
+              label="password"
+              onChange={[Function]}
+              placeholder="Password"
+              required={false}
+              select={false}
+              style={
+                Object {
+                  "margin": ".5em",
+                }
+              }
+              type="password"
+              value=""
+            />
+            <SubmitButtons
+              buttonStyle={
+                Object {
+                  "background": "green",
+                  "margin": "1em",
+                  "padding": "1em",
+                }
+              }
+              buttonText="Register"
+            />
+          </form>,
+          false,
+          false,
+          <LinkButtons
+            buttonStyle={
+              Object {
+                "background": "mediumpurple",
+                "margin": "1em",
+                "padding": "1em",
+              }
+            }
+            buttonText="Go Home"
+            link="/"
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "title": Object {
+              "pageTitle": "Register Screen",
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TextField
+                id="first_name"
+                label="first_name"
+                onChange={[Function]}
+                placeholder="First Name"
+                required={false}
+                select={false}
+                style={
+                  Object {
+                    "margin": ".5em",
+                  }
+                }
+                value=""
+              />,
+              <TextField
+                id="last_name"
+                label="last_name"
+                onChange={[Function]}
+                placeholder="Last Name"
+                required={false}
+                select={false}
+                style={
+                  Object {
+                    "margin": ".5em",
+                  }
+                }
+                value=""
+              />,
+              <TextField
+                id="email"
+                label="email"
+                onChange={[Function]}
+                placeholder="Email"
+                required={false}
+                select={false}
+                style={
+                  Object {
+                    "margin": ".5em",
+                  }
+                }
+                value=""
+              />,
+              <TextField
+                id="username"
+                label="username"
+                onChange={[Function]}
+                placeholder="Username"
+                required={false}
+                select={false}
+                style={
+                  Object {
+                    "margin": ".5em",
+                  }
+                }
+                value=""
+              />,
+              <TextField
+                id="password"
+                label="password"
+                onChange={[Function]}
+                placeholder="Password"
+                required={false}
+                select={false}
+                style={
+                  Object {
+                    "margin": ".5em",
+                  }
+                }
+                type="password"
+                value=""
+              />,
+              <SubmitButtons
+                buttonStyle={
+                  Object {
+                    "background": "green",
+                    "margin": "1em",
+                    "padding": "1em",
+                  }
+                }
+                buttonText="Register"
+              />,
+            ],
+            "className": "profile-form",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "id": "first_name",
+                "label": "first_name",
+                "onChange": [Function],
+                "placeholder": "First Name",
+                "required": false,
+                "select": false,
+                "style": Object {
+                  "margin": ".5em",
+                },
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "id": "last_name",
+                "label": "last_name",
+                "onChange": [Function],
+                "placeholder": "Last Name",
+                "required": false,
+                "select": false,
+                "style": Object {
+                  "margin": ".5em",
+                },
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "id": "email",
+                "label": "email",
+                "onChange": [Function],
+                "placeholder": "Email",
+                "required": false,
+                "select": false,
+                "style": Object {
+                  "margin": ".5em",
+                },
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "id": "username",
+                "label": "username",
+                "onChange": [Function],
+                "placeholder": "Username",
+                "required": false,
+                "select": false,
+                "style": Object {
+                  "margin": ".5em",
+                },
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "id": "password",
+                "label": "password",
+                "onChange": [Function],
+                "placeholder": "Password",
+                "required": false,
+                "select": false,
+                "style": Object {
+                  "margin": ".5em",
+                },
+                "type": "password",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "buttonStyle": Object {
+                  "background": "green",
+                  "margin": "1em",
+                  "padding": "1em",
+                },
+                "buttonText": "Register",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "form",
+        },
+        false,
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "buttonStyle": Object {
+              "background": "mediumpurple",
+              "margin": "1em",
+              "padding": "1em",
+            },
+            "buttonText": "Go Home",
+            "link": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
