@@ -2,7 +2,7 @@
 
 ## Goals
 
-Test suite
+Test suite - In Progress
 
 Release and Roster from Go Lang - DONE
 
