@@ -38,8 +38,23 @@ const styles = theme => ({
 class Goals extends Component {
   state = {
     editView: "",
-    currentInput: 0
+    currentInput: 0,
+    width: 0
   };
+
+  componentDidMount = () => {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  };
+
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth });
+  };
+
   handleEdit = name => {
     console.log(name);
     this.setState({
@@ -83,7 +98,9 @@ class Goals extends Component {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <CustomTableCell>Area</CustomTableCell>
+                  <CustomTableCell>
+                    Area {this.state.width <= 700 && "(Swipe Right for more..)"}
+                  </CustomTableCell>
                   <CustomTableCell align="right">Healthy</CustomTableCell>
                   <CustomTableCell align="right">Low Alert</CustomTableCell>
                   <CustomTableCell align="right">High Alert</CustomTableCell>

@@ -32,7 +32,20 @@ const styles = theme => ({
 
 class Saturation extends Component {
   state = {
-    clicked: false
+    clicked: false,
+    width: 0
+  };
+  componentDidMount = () => {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  };
+
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth });
   };
   onClick = () => {
     this.setState({
@@ -97,7 +110,10 @@ class Saturation extends Component {
                 <Table className={classes.table}>
                   <TableHead>
                     <TableRow>
-                      <TableCell>URL</TableCell>
+                      <TableCell>
+                        URL{" "}
+                        {this.state.width <= 700 && "(Swipe Right for more..)"}
+                      </TableCell>
                       <TableCell align="right">Traffic</TableCell>
                       <TableCell align="right">Count</TableCell>
                     </TableRow>

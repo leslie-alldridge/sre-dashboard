@@ -2,17 +2,19 @@
 
 ##Goals
 
-An on call roster & releases and help page will assist users
-
-Login and auth to keep the page secure
-
-Last refreshed duration on screen
-
 Test suite
 
-Additional styling and data from golang server
+Release and Roster from Go Lang
 
-Deploy golang server and main app to Heroku
+An on call roster & releases and help page will assist users - DONE
+
+Login and auth to keep the page secure - DONE
+
+Last refreshed duration on screen - DONE
+
+Additional styling and data from golang server - DONE
+
+Deploy golang server and main app to Heroku - DONE
 
 Dashboard will update with a users newly saved Goals - DONE
 
@@ -30,15 +32,16 @@ Clicking on a graph will display the 99% outliers (url, value, count, team) - DO
 - Redux
 - Node
 - Golang API server
-- Knex JS
+- Knex JS (Postgres on Heroku)
 - Nodemailer
 - Bcrypt JS
-- JSON Web Token
+- JSON Web Tokens
 - Passport
 - Webpack
 - Express
 - Axios
 - My password reset boilerplate (to give me a headstart on auth)
+- Material UI
 
 ### Desired New Features
 
