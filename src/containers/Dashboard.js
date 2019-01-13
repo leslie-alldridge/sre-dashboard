@@ -47,11 +47,10 @@ class Dashboard extends Component {
             <div className={classes.root}>
               <Grid id="grid-dash" container spacing={24}>
                 {this.props.state.goals.goals.map(goal => {
-                  console.log(goal);
-
                   if (goal.area == "Latency") {
                     return (
                       <Latency
+                        key={goal.area}
                         current={this.props.latencyData}
                         goalData={goal}
                       />
@@ -59,32 +58,29 @@ class Dashboard extends Component {
                   } else if (goal.area == "Traffic") {
                     return (
                       <Traffic
+                        key={goal.area}
                         current={this.props.trafficData}
                         goalData={goal}
                       />
                     );
                   } else if (goal.area == "Errors") {
                     return (
-                      <Errors current={this.props.errorData} goalData={goal} />
+                      <Errors
+                        key={goal.area}
+                        current={this.props.errorData}
+                        goalData={goal}
+                      />
                     );
                   } else if (goal.area == "Saturation") {
                     return (
                       <Saturation
+                        key={goal.area}
                         current={this.props.saturationData}
                         goalData={goal}
                       />
                     );
                   }
                 })}
-
-                {/* <Errors
-                  current={this.props.errorData}
-                  goalData={this.props.state.goals.goals}
-                />
-                <Saturation
-                  current={this.props.saturationData}
-                  goalData={this.props.state.goals.goals}
-                /> */}
               </Grid>
             </div>
             <br />

@@ -22,7 +22,6 @@ export function goalsFetchDataSuccess(goals) {
   goals = goals.sort(function(a, b) {
     return a.id - b.id;
   });
-  console.log(goals);
 
   return {
     type: "GOALS_FETCH_DATA_SUCCESS",

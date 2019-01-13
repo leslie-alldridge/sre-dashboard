@@ -48,8 +48,6 @@ class Latency extends Component {
   };
   render() {
     const { classes } = this.props;
-    console.log(this.props.goalData);
-
     const size = {
       height: 220
     };
