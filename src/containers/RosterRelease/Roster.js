@@ -56,7 +56,8 @@ class Roster extends React.Component {
 
   state = {
     expanded: "panel1",
-    rosterData: ""
+    rosterData: "",
+    rosterData2: ""
   };
 
   componentDidMount = () => {

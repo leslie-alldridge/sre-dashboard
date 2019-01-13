@@ -28,16 +28,13 @@ function Release(props) {
           <ListItemIcon>
             <StarIcon />
           </ListItemIcon>
-          <ListItemText inset primary="Payroll Database Upgrade - Brumbies" />
+          <ListItemText inset primary={props.release1} />
         </ListItem>
         <ListItem button>
-          <ListItemText inset primary="SSO Flow 20% of users - Identity" />
+          <ListItemText inset primary={props.release2} />
         </ListItem>
         <ListItem button>
-          <ListItemText
-            inset
-            primary="Fix deployed for global search - Fringe"
-          />
+          <ListItemText inset primary={props.release3} />
         </ListItem>
       </List>
     </div>

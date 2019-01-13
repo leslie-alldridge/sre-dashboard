@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import { withStyles } from "@material-ui/core/styles";
 import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -51,9 +52,39 @@ const ExpansionPanelDetails = withStyles(theme => ({
   }
 }))(MuiExpansionPanelDetails);
 
-class Roster extends React.Component {
+class Releases extends React.Component {
+  _isMounted = false;
+
   state = {
-    expanded: "panel1"
+    expanded: "panel1",
+    release1: "",
+    release2: "",
+    release3: ""
+  };
+
+  componentDidMount = () => {
+    this._isMounted = true;
+    axios
+      .get("https://go-server-dash.herokuapp.com/releases")
+      .then(res => {
+        if (this._isMounted) {
+          this.setState({
+            release1:
+              String(res.data["detail1"][0][0]) +
+              " - " +
+              String(res.data["team1"][0][0]),
+            release2:
+              String(res.data["detail2"][0][0]) +
+              " - " +
+              String(res.data["team2"][0][0]),
+            release3:
+              String(res.data["detail3"][0][0]) +
+              " - " +
+              String(res.data["team3"][0][0])
+          });
+        }
+      })
+      .catch(err => console.log(err));
   };
 
   handleChange = panel => (event, expanded) => {
@@ -74,7 +105,11 @@ class Roster extends React.Component {
             <Typography>Week #1</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Release />
+            <Release
+              release1={this.state.release1}
+              release2={this.state.release2}
+              release3={this.state.release3}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -85,7 +120,11 @@ class Roster extends React.Component {
             <Typography>Week #2</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Release />
+            <Release
+              release1={this.state.release1}
+              release2={this.state.release2}
+              release3={this.state.release3}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -96,7 +135,11 @@ class Roster extends React.Component {
             <Typography>Week #3</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Release />
+            <Release
+              release1={this.state.release1}
+              release2={this.state.release2}
+              release3={this.state.release3}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -107,7 +150,11 @@ class Roster extends React.Component {
             <Typography>Week #4</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <Release />
+            <Release
+              release1={this.state.release1}
+              release2={this.state.release2}
+              release3={this.state.release3}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
@@ -115,4 +162,4 @@ class Roster extends React.Component {
   }
 }
 
-export default Roster;
+export default Releases;
