@@ -11,10 +11,10 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 
 import Dashboard from "./Dashboard";
-import Objectives from "./Objectives";
-import RosterRelease from "./RosterRelease";
-import Help from "./Help";
-import Loading from "./Loading";
+import Objectives from "./Objectives/Objectives";
+import RosterRelease from "./RosterRelease/RosterRelease";
+import Help from "../components/Help";
+import Loading from "../components/Loading";
 
 function TabContainer({ children, dir }) {
   return (

@@ -11,7 +11,7 @@ import {
   loginButton,
   inputStyle,
   HeaderBar
-} from "../components";
+} from "../../components";
 
 const title = {
   pageTitle: "Register Screen"

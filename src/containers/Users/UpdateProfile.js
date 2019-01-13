@@ -13,7 +13,7 @@ import {
   saveButton,
   loginButton,
   inputStyle
-} from "../components";
+} from "../../components";
 
 const loading = {
   margin: "1em",

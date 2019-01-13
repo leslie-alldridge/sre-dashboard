@@ -9,7 +9,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 import Goals from "./Goals";
-import { getGoalsAction, saveGoalsAction } from "../actions/goals";
+import { getGoalsAction, saveGoalsAction } from "../../actions/goals";
 
 const styles = theme => ({
   button: {

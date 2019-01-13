@@ -8,11 +8,11 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Autorenew from "@material-ui/icons/Autorenew";
 
-import Latency from "./Latency";
-import Traffic from "./Traffic";
-import Errors from "./Errors";
-import Saturation from "./Saturation";
-import Loading from "./Loading";
+import Latency from "./Charts/Latency";
+import Traffic from "./Charts/Traffic";
+import Errors from "./Charts/Errors";
+import Saturation from "./Charts/Saturation";
+import Loading from "../components/Loading";
 
 const styles = theme => ({
   root: {
