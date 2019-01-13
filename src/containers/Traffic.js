@@ -72,7 +72,7 @@ class Traffic extends Component {
       units: "value"
     };
     return (
-      <Grid item xs={6}>
+      <Grid id="test2" item xs={6}>
         <div className="animated fadeIn" onClick={this.onClick} id="chartBG">
           {!this.state.clicked && (
             <React.Fragment>

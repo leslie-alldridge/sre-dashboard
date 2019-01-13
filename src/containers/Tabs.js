@@ -119,11 +119,10 @@ class FullWidthTabs extends React.Component {
 
     return (
       <React.Fragment>
-        {console.log(this.props)}
         <h3 className="title">Monitoring Service - {this.state.headerText}</h3>
         {!this.state.latencyData == "" && (
           <div>
-            <AppBar position="static" color="default">
+            <AppBar id="app-bar" position="static" color="default">
               <Tabs
                 value={this.state.value}
                 onChange={this.handleChange}

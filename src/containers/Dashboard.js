@@ -46,7 +46,7 @@ class Dashboard extends Component {
         {!this.props.state.goals.isFetching && (
           <div className="dash">
             <div className={classes.root}>
-              <Grid container spacing={24}>
+              <Grid id="grid-dash" container spacing={24}>
                 <Latency
                   current={this.props.latencyData}
                   goalData={this.props.state.goals.goals}

@@ -41,6 +41,7 @@ body {
   font-weight: 600;
   font-size: 36px !important;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 1% !important;
 }
 
 .gaugeTitle {
@@ -166,4 +167,27 @@ body {
 #loading-refresh {
   color: #e0e8eb;
   font-size: 1.2em;
+}
+
+@media only screen and (max-width: 850px) {
+  #app-bar span {
+    /* width: 100vw; */
+    font-size: 10px;
+  }
+  #grid-dash {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  #test2 {
+    width: 100% !important;
+    min-width: 100%;
+    padding: 0;
+    padding-left: 5%;
+  }
+  .gaugeTitle {
+    font-size: 18px !important;
+    margin-bottom: 0 !important;
+  }
 }
