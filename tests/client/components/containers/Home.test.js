@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Tabs from "../../../src/containers/Tabs";
+import Home from "../../../../src/containers/Home";
 describe("MyComponent", () => {
   it('should render correctly in "debug" mode', () => {
-    const component = shallow(<Tabs debug />);
+    const component = shallow(<Home debug />);
 
     expect(component).toMatchSnapshot();
   });
