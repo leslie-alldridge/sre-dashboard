@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
+
+import TextField from "@material-ui/core/TextField";
 
 import {
   LinkButtons,
@@ -58,7 +59,6 @@ class UpdateProfile extends Component {
         headers: { Authorization: `JWT ${accessString}` }
       })
       .then(response => {
-        // console.log(response.data);
         this.setState({
           loadingUser: false,
           first_name: response.data.first_name,
@@ -104,7 +104,6 @@ class UpdateProfile extends Component {
         }
       )
       .then(response => {
-        // console.log(response.data);
         this.setState({
           updated: true,
           error: false

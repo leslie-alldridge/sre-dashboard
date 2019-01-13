@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import C3Chart from "react-c3js";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -52,7 +52,6 @@ class Latency extends Component {
     const size = {
       height: 220
     };
-    console.log(this.props.current);
     const data = {
       columns: [["Latency (ms)", Math.round(this.props.current)]],
       type: "gauge"
@@ -60,8 +59,7 @@ class Latency extends Component {
     const color = {
       pattern: ["#60B044", "#F6C600", "#F97600", "#FF0000"],
       threshold: {
-        unit: "value", // percentage is default
-        //            max: 200, // 100 is default
+        unit: "value",
         values: [
           this.props.goalData[0].healthy,
           this.props.goalData[0].low,
@@ -69,14 +67,13 @@ class Latency extends Component {
         ]
       }
     };
-
     const gauge = {
-      max: 200, // 100 is default,
+      max: 200,
       label: {
         format: function(value, ratio) {
           return value;
         },
-        show: false // to turn off the min/max labels.
+        show: false
       },
       values: [
         this.props.goalData[0].healthy,
@@ -96,10 +93,8 @@ class Latency extends Component {
           )}
           {this.state.clicked && (
             <div className="animated fadeIn">
-              {/* <p className="ninety-title">99th Percentile</p> */}
               <hr />
               <span className="ninety-title">99th Percentile</span>
-
               <Paper className={classes.root}>
                 <Table className={classes.table}>
                   <TableHead>

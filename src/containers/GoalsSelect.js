@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+
 import { withStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+
 import Goals from "./Goals";
 import { getGoalsAction, saveGoalsAction } from "../actions/goals";
 
@@ -31,8 +33,6 @@ class ControlledOpenSelect extends Component {
   };
 
   handleChange = event => {
-    console.log(event.target.value);
-
     this.setState({ [event.target.name]: event.target.value });
   };
 

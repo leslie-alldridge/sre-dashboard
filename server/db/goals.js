@@ -13,7 +13,6 @@ function getGoals(testDb) {
 }
 
 function saveGoals(area, section, value, testDb) {
-  console.log(area, section, value);
   if (section == "healthy") {
     const connection = testDb || knex;
     return connection("goals")

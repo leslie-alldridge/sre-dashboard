@@ -7,35 +7,6 @@ body {
   max-height: 100vh;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .title {
   color: #e0e8eb;
   font-weight: 600;
@@ -90,15 +61,6 @@ body {
 #refresh-button {
   margin-top: 1.5%;
 }
-/* colors
-
-#465A64
-#71C25D
-#CE4E5D
-#D3A438
-#E0E8EB
-#394850
-#2B353A */
 
 #goal-text {
   color: #394850;
@@ -169,9 +131,10 @@ body {
   font-size: 1.2em;
 }
 
+/* Mobile views */
+
 @media only screen and (max-width: 850px) {
   #app-bar span {
-    /* width: 100vw; */
     font-size: 10px;
   }
   #grid-dash {

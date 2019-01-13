@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import C3Chart from "react-c3js";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 
+import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -50,11 +50,9 @@ class Errors extends Component {
   };
   render() {
     const { classes } = this.props;
-
     const size = {
       height: 220
     };
-    console.log(this.props.current);
     const data = {
       columns: [["Errors %", this.props.current.toFixed(2)]],
       type: "gauge"
@@ -62,8 +60,7 @@ class Errors extends Component {
     const color = {
       pattern: ["#60B044", "#F6C600", "#F97600", "#FF0000"],
       threshold: {
-        unit: "value", // percentage is default
-        //            max: 200, // 100 is default
+        unit: "value",
         values: [
           this.props.goalData[2].healthy,
           this.props.goalData[2].low,
@@ -71,14 +68,13 @@ class Errors extends Component {
         ]
       }
     };
-
     const gauge = {
-      max: 5, // 100 is default,
+      max: 5,
       label: {
         format: function(value, ratio) {
           return value;
         },
-        show: false // to turn off the min/max labels.
+        show: false
       },
       values: [
         this.props.goalData[2].healthy,
@@ -98,7 +94,6 @@ class Errors extends Component {
           )}
           {this.state.clicked && (
             <div className="animated fadeIn">
-              {/* <p className="ninety-title">99th Percentile</p> */}
               <hr />
               <span className="ninety-title">99th Percentile</span>
 

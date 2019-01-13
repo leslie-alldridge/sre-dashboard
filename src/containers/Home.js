@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import {
   HeaderBar,
   LinkButtons,
@@ -24,11 +25,6 @@ class Home extends Component {
           buttonText={`Login`}
           buttonStyle={loginButton}
           link={`/login`}
-        />
-        <LinkButtons
-          buttonText={`Dash`}
-          buttonStyle={loginButton}
-          link={`/dashboard`}
         />
       </div>
     );

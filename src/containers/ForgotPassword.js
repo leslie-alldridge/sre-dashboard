@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
+
+import TextField from "@material-ui/core/TextField";
 
 import {
   LinkButtons,
@@ -19,7 +20,6 @@ const title = {
 class ForgotPassword extends Component {
   constructor() {
     super();
-
     this.state = {
       email: "",
       showError: false,
@@ -46,7 +46,6 @@ class ForgotPassword extends Component {
           email: this.state.email
         })
         .then(response => {
-          console.log(response.data);
           if (response.data === "email not in db") {
             this.setState({
               showError: true,
@@ -59,9 +58,7 @@ class ForgotPassword extends Component {
             });
           }
         })
-        .catch(error => {
-          console.log(error.data);
-        });
+        .catch(error => {});
     }
   };
 

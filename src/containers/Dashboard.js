@@ -39,7 +39,6 @@ class Dashboard extends Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this.props);
     return (
       <React.Fragment>
         {this.props.state.goals.isFetching == true && <Loading />}
@@ -68,7 +67,6 @@ class Dashboard extends Component {
             <br />
           </div>
         )}
-
         {this.props.refresh && (
           <Button
             id="refresh-button"

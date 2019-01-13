@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -56,14 +57,12 @@ class Goals extends Component {
   };
 
   handleEdit = name => {
-    console.log(name);
     this.setState({
       editView: name
     });
   };
 
   handleSave = name => {
-    console.log(name);
     if (this.state.currentInput !== 0) {
       this.props.func(this.props.target, name, this.state.currentInput);
     } else {
@@ -77,7 +76,6 @@ class Goals extends Component {
   };
 
   handleInputChange = e => {
-    console.log(e.target.value);
     this.setState({
       currentInput: e.target.value
     });
@@ -106,7 +104,6 @@ class Goals extends Component {
                   <CustomTableCell align="right">High Alert</CustomTableCell>
                 </TableRow>
               </TableHead>
-
               <TableBody>
                 {this.props.data.isFetching !== true &&
                   this.props.data.goals.map(cell => {

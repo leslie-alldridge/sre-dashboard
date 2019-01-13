@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
+
 import Table from "@material-ui/core/Table";
 import Button from "@material-ui/core/Button";
-import { Link, Redirect } from "react-router-dom";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableRow from "@material-ui/core/TableRow";
@@ -45,7 +46,6 @@ class Profile extends Component {
 
   async componentDidMount() {
     let accessString = localStorage.getItem("JWT");
-    console.log(accessString);
     if (accessString == null) {
       this.setState({
         isLoading: false,
@@ -94,7 +94,6 @@ class Profile extends Component {
         headers: { Authorization: `JWT ${accessString}` }
       })
       .then(response => {
-        console.log(response.data);
         localStorage.removeItem("JWT");
         this.setState({
           deleted: true
@@ -193,6 +192,16 @@ class Profile extends Component {
             buttonText={"Update Password"}
             link={`/updatePassword/${username}`}
           />
+          <Button
+            style={logoutButton}
+            variant="contained"
+            color="primary"
+            onClick={this.logout}
+          >
+            <Link style={linkStyle} to={"/dashboard"}>
+              Dashboard
+            </Link>
+          </Button>
           <Button
             style={logoutButton}
             variant="contained"

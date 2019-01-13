@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 import TextField from "@material-ui/core/TextField";
 
 import {
@@ -44,7 +45,6 @@ export default class ResetPassword extends Component {
         }
       })
       .then(response => {
-        console.log(response);
         if (response.data.message === "password reset link a-ok") {
           this.setState({
             username: response.data.username,
@@ -79,7 +79,6 @@ export default class ResetPassword extends Component {
         password: this.state.password
       })
       .then(response => {
-        console.log(response.data);
         if (response.data.message === "password updated") {
           this.setState({
             updated: true,

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -22,7 +23,6 @@ function Release(props) {
       <p>
         <b>Latest Xero Releases:</b>
       </p>
-
       <List component="nav" className={classes.root}>
         <ListItem button>
           <ListItemIcon>

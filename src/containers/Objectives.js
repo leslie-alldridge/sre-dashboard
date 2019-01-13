@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ControlledOpenSelect from "./ControlledOpenSelect";
+import ControlledOpenSelect from "./GoalsSelect";
 
 class Objectives extends Component {
   render() {

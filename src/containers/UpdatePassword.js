@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
+
+import TextField from "@material-ui/core/TextField";
 
 import {
   LinkButtons,

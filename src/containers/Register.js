@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
 import axios from "axios";
+
+import TextField from "@material-ui/core/TextField";
 
 import {
   LinkButtons,
@@ -61,7 +62,6 @@ class Register extends Component {
           password: this.state.password
         })
         .then(response => {
-          console.log(response.data);
           if (response.data === "username or email already taken") {
             this.setState({
               showError: true,
@@ -69,9 +69,7 @@ class Register extends Component {
               registerError: false
             });
           } else {
-            console.log(response.data)
             this.setState({
-              //changed here
               messageFromServer: response.data.message,
               showError: false,
               loginError: false,
