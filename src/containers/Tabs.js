@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
@@ -11,6 +12,7 @@ import Objectives from "./Objectives";
 import RosterRelease from "./RosterRelease";
 import axios from "axios";
 import Help from "./Help";
+import Loading from "./Loading";
 
 function TabContainer({ children, dir }) {
   return (
@@ -32,6 +34,8 @@ const styles = theme => ({
 });
 
 class FullWidthTabs extends React.Component {
+  _isMounted = false;
+
   state = {
     value: 0,
     headerText: "Core Metrics",
@@ -42,22 +46,30 @@ class FullWidthTabs extends React.Component {
   };
 
   componentDidMount = () => {
+    this._isMounted = true;
     axios
-      .get("http://localhost:4000/healthcheck")
+      .get("https://go-server-dash.herokuapp.com/healthcheck")
       .then(res => {
-        this.setState({
-          latencyData: res.data.latency,
-          trafficData: res.data.traffic,
-          errorData: res.data.errors,
-          saturationData: res.data.saturation
-        });
+        console.log(res);
+        if (this._isMounted) {
+          this.setState({
+            latencyData: res.data.latency,
+            trafficData: res.data.traffic,
+            errorData: res.data.errors,
+            saturationData: res.data.saturation
+          });
+        }
       })
       .catch(err => console.log(err));
   };
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   handleRefresh = () => {
     axios
-      .get("http://localhost:4000/healthcheck")
+      .get("https://go-server-dash.herokuapp.com/healthcheck")
       .then(res => {
         this.setState({
           latencyData: res.data.latency,
@@ -102,47 +114,51 @@ class FullWidthTabs extends React.Component {
 
     return (
       <React.Fragment>
+        {console.log(this.props)}
         <h3 className="title">Monitoring Service - {this.state.headerText}</h3>
-        <div>
-          <AppBar position="static" color="default">
-            <Tabs
-              value={this.state.value}
-              onChange={this.handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              centered
+        {!this.state.latencyData == "" && (
+          <div>
+            <AppBar position="static" color="default">
+              <Tabs
+                value={this.state.value}
+                onChange={this.handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+              >
+                <Tab label="Dashboard" />
+                <Tab label="Objectives" />
+                <Tab label="Roster & Releases" />
+                <Tab label="Help" />
+              </Tabs>
+            </AppBar>
+            <SwipeableViews
+              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              index={this.state.value}
+              onChangeIndex={this.handleChangeIndex}
             >
-              <Tab label="Dashboard" />
-              <Tab label="Objectives" />
-              <Tab label="Roster & Releases" />
-              <Tab label="Help" />
-            </Tabs>
-          </AppBar>
-          <SwipeableViews
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-            index={this.state.value}
-            onChangeIndex={this.handleChangeIndex}
-          >
-            <TabContainer dir={theme.direction}>
-              <Dashboard
-                handleRefresh={this.handleRefresh}
-                latencyData={this.state.latencyData}
-                trafficData={this.state.trafficData}
-                errorData={this.state.errorData}
-                saturationData={this.state.saturationData}
-              />
-            </TabContainer>
-            <TabContainer dir={theme.direction}>
-              <Objectives />
-            </TabContainer>
-            <TabContainer dir={theme.direction}>
-              <RosterRelease />
-            </TabContainer>
-            <TabContainer dir={theme.direction}>
-              <Help />
-            </TabContainer>
-          </SwipeableViews>
-        </div>
+              <TabContainer dir={theme.direction}>
+                <Dashboard
+                  handleRefresh={this.handleRefresh}
+                  latencyData={this.state.latencyData}
+                  trafficData={this.state.trafficData}
+                  errorData={this.state.errorData}
+                  saturationData={this.state.saturationData}
+                />
+              </TabContainer>
+              <TabContainer dir={theme.direction}>
+                <Objectives />
+              </TabContainer>
+              <TabContainer dir={theme.direction}>
+                <RosterRelease />
+              </TabContainer>
+              <TabContainer dir={theme.direction}>
+                <Help />
+              </TabContainer>
+            </SwipeableViews>
+          </div>
+        )}
+        {this.state.latencyData == "" && <Loading />}
       </React.Fragment>
     );
   }
@@ -153,4 +169,12 @@ FullWidthTabs.propTypes = {
   theme: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+function mapStateToProps(state) {
+  return {
+    state: state
+  };
+}
+
+export default withStyles(styles, { withTheme: true })(
+  connect(mapStateToProps)(FullWidthTabs)
+);

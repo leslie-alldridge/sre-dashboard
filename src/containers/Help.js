@@ -18,7 +18,9 @@ function Help(props) {
   return (
     <div>
       <Paper className={classes.root} elevation={1}>
-        <Typography component="h3">Dashboard</Typography>
+        <Typography variant="subheading" component="h3">
+          <b>Dashboard</b>
+        </Typography>
 
         <Typography component="p">
           The Dashboard tab displays the Four Golden Signals measured against
@@ -27,7 +29,9 @@ function Help(props) {
           most up to date information displays.
         </Typography>
         <hr />
-        <Typography component="h3">Objectives</Typography>
+        <Typography variant="subheading" component="h3">
+          <b>Objectives</b>
+        </Typography>
 
         <Typography component="p">
           In the Objectives tab you can select and save new goals. Healthy will
@@ -37,7 +41,9 @@ function Help(props) {
           to a SQL database and can be updated at any time.
         </Typography>
         <hr />
-        <Typography component="h3">Roster & Releases</Typography>
+        <Typography variant="subheading" component="h3">
+          <b>Roster & Releases</b>
+        </Typography>
 
         <Typography component="p">
           To the left of this page you'll see the on-call roster. This is a four
@@ -47,7 +53,9 @@ function Help(props) {
           released.
         </Typography>
         <hr />
-        <Typography component="h3">Other Requests?</Typography>
+        <Typography variant="subheading" component="h3">
+          <b>Other Requests</b>
+        </Typography>
 
         <Typography component="p">
           This was created over 2 days to support my application for a role in
