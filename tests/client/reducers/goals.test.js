@@ -9,7 +9,7 @@ test("goals reducer Initial State", () => {
 });
 
 test("loading getting users goals", () => {
-  const expected = {"isFetching": true};
+  const expected = { isFetching: true };
 
   const action = {
     type: "GOALS_LOADING",
@@ -21,30 +21,30 @@ test("loading getting users goals", () => {
   expect(actual).toEqual(expected);
 });
 
-test('getting users goals', () => {
-    const goalsData = [{id: '1', goal: 'name'}];
-    const expected = [...goalsData];
-  
-    const action = {
-      type: 'GOALS_FETCH_DATA_SUCCESS',
-      isFetching: false,
-      goals: goalsData
-    };
-  
-    const actual = goals([], action).goals;
-  
-    expect(actual).toEqual(expected);
-  });
+test("getting users goals", () => {
+  const goalsData = [{ id: "1", goal: "name" }];
+  const expected = [...goalsData];
 
-  test("users goals errored", () => {
-    const expected = {"error": true};
-  
-    const action = {
-      type: "GOALS_HAS_ERRORED",
-      hasErrored: true
-    };
-  
-    const actual = goals([], action);
-  
-    expect(actual).toEqual(expected);
-  });
+  const action = {
+    type: "GOALS_FETCH_DATA_SUCCESS",
+    isFetching: false,
+    goals: goalsData
+  };
+
+  const actual = goals([], action).goals;
+
+  expect(actual).toEqual(expected);
+});
+
+test("users goals errored", () => {
+  const expected = { error: true };
+
+  const action = {
+    type: "GOALS_HAS_ERRORED",
+    hasErrored: true
+  };
+
+  const actual = goals([], action);
+
+  expect(actual).toEqual(expected);
+});
