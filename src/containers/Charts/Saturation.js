@@ -53,7 +53,7 @@ class Saturation extends Component {
       height: 220
     };
     const data = {
-      columns: [["Saturation (ms)", this.props.current.toFixed(2)]],
+      columns: [["Saturation %", this.props.current.toFixed(2)]],
       type: "gauge"
     };
     const color = {

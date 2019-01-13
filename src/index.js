@@ -8,7 +8,13 @@ import thunkMiddleware from "redux-thunk";
 import App from "./containers/App";
 import reducers from "./reducers";
 
-const store = createStore(reducers, compose(applyMiddleware(thunkMiddleware)));
+const store = createStore(
+  reducers,
+  compose(
+    applyMiddleware(thunkMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+);
 
 render(
   <Provider store={store}>
