@@ -98,7 +98,7 @@ class Register extends Component {
 
     if (messageFromServer === "") {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <form className="profile-form" onSubmit={this.registerUser}>
             <TextField
@@ -153,7 +153,7 @@ class Register extends Component {
             </div>
           )}
           {showError === true && loginError === true && (
-            <div>
+            <div id="user-bg">
               <p>
                 That username or email is already taken. Please choose another
                 or login.
@@ -174,7 +174,7 @@ class Register extends Component {
       );
     } else if (messageFromServer === "success") {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <h3>User successfully registered!</h3>
           <LinkButtons

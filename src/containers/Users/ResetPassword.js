@@ -101,7 +101,7 @@ export default class ResetPassword extends Component {
 
     if (error) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <div style={loading}>
             <h4>Problem resetting password. Please send another reset link.</h4>
@@ -120,14 +120,14 @@ export default class ResetPassword extends Component {
       );
     } else if (isLoading) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <div style={loading}>Loading User Data...</div>
         </div>
       );
     } else {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <form className="password-form" onSubmit={this.updatePassword}>
             <TextField

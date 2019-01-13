@@ -86,7 +86,7 @@ class Login extends Component {
     } = this.state;
     if (!loggedIn) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <form className="profile-form" onSubmit={this.loginUser}>
             <TextField

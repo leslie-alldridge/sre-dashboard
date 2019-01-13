@@ -2,6 +2,10 @@ body {
   background-color: #2b353a;
 }
 
+#user-bg {
+  background-color: #e0e8eb;
+}
+
 .App {
   text-align: center;
   max-height: 100vh;

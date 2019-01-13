@@ -66,7 +66,7 @@ class ForgotPassword extends Component {
     const { email, messageFromServer, showNullError, showError } = this.state;
 
     return (
-      <div>
+      <div id="user-bg">
         <HeaderBar title={title} />
         <form className="profile-form" onSubmit={this.sendEmail}>
           <TextField
@@ -83,12 +83,12 @@ class ForgotPassword extends Component {
           />
         </form>
         {showNullError && (
-          <div>
+          <div id="user-bg">
             <p>The email address cannot be null.</p>
           </div>
         )}
         {showError && (
-          <div>
+          <div id="user-bg">
             <p>
               That email address isn't recognized. Please try again or register
               for a new account.
@@ -101,7 +101,7 @@ class ForgotPassword extends Component {
           </div>
         )}
         {messageFromServer === "recovery email sent" && (
-          <div>
+          <div id="user-bg">
             <h3>Password Reset Email Successfully Sent!</h3>
           </div>
         )}

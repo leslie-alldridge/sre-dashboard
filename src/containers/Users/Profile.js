@@ -123,7 +123,7 @@ class Profile extends Component {
 
     if (error) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <div style={loading}>
             Problem fetching user data. Please login again.
@@ -137,7 +137,7 @@ class Profile extends Component {
       );
     } else if (isLoading) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <div style={loading}>Loading User Data...</div>
         </div>
@@ -146,7 +146,7 @@ class Profile extends Component {
       return <Redirect to="/" />;
     } else {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <Table>
             <TableBody>

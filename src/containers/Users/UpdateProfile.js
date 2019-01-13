@@ -128,7 +128,7 @@ class UpdateProfile extends Component {
 
     if (error) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <p style={loading}>
             There was a problem accessing your data. Please go login again.
@@ -142,7 +142,7 @@ class UpdateProfile extends Component {
       );
     } else if (loadingUser !== false) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <p style={loading}>Loading user data...</p>
         </div>
@@ -151,7 +151,7 @@ class UpdateProfile extends Component {
       return <Redirect to={`/userProfile/${username}`} />;
     } else if (loadingUser === false) {
       return (
-        <div>
+        <div id="user-bg">
           <HeaderBar title={title} />
           <form className="profile-form" onSubmit={this.updateUser}>
             <TextField

@@ -118,7 +118,7 @@ class FullWidthTabs extends React.Component {
   render() {
     const { classes, theme } = this.props;
     return (
-      <React.Fragment>
+      <div >
         <h3 className="title">{this.state.headerText}</h3>
         {!this.state.latencyData == "" && (
           <div>
@@ -164,7 +164,7 @@ class FullWidthTabs extends React.Component {
           </div>
         )}
         {this.state.latencyData == "" && <Loading />}
-      </React.Fragment>
+      </div>
     );
   }
 }

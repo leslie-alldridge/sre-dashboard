@@ -14,7 +14,7 @@ const title = {
 class Home extends Component {
   render() {
     return (
-      <div className="home-page">
+      <div id="user-bg" className="home-page">
         <HeaderBar title={title} />
         <LinkButtons
           buttonText={`Register`}
