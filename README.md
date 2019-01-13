@@ -4,7 +4,7 @@
 
 Test suite
 
-Release and Roster from Go Lang
+Release and Roster from Go Lang - DONE
 
 An on call roster & releases and help page will assist users - DONE
 
