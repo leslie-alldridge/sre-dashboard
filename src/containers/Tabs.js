@@ -42,7 +42,8 @@ class FullWidthTabs extends React.Component {
     latencyData: "",
     trafficData: "",
     errorData: "",
-    saturationData: ""
+    saturationData: "",
+    refresh: true
   };
 
   componentDidMount = () => {
@@ -68,6 +69,9 @@ class FullWidthTabs extends React.Component {
   }
 
   handleRefresh = () => {
+    this.setState({
+      refresh: false
+    });
     axios
       .get("https://go-server-dash.herokuapp.com/healthcheck")
       .then(res => {
@@ -75,7 +79,8 @@ class FullWidthTabs extends React.Component {
           latencyData: res.data.latency,
           trafficData: res.data.traffic,
           errorData: res.data.errors,
-          saturationData: res.data.saturation
+          saturationData: res.data.saturation,
+          refresh: true
         });
       })
       .catch(err => console.log(err));
@@ -139,6 +144,7 @@ class FullWidthTabs extends React.Component {
             >
               <TabContainer dir={theme.direction}>
                 <Dashboard
+                  refresh={this.state.refresh}
                   handleRefresh={this.handleRefresh}
                   latencyData={this.state.latencyData}
                   trafficData={this.state.trafficData}

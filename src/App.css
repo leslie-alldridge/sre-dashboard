@@ -162,3 +162,8 @@ body {
   padding: 0;
   padding-left: 5%;
 }
+
+#loading-refresh {
+  color: #e0e8eb;
+  font-size: 1.2em;
+}

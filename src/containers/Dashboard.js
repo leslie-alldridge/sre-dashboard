@@ -69,15 +69,22 @@ class Dashboard extends Component {
           </div>
         )}
 
-        <Button
-          id="refresh-button"
-          variant="contained"
-          className={classes.button}
-          onClick={this.props.handleRefresh}
-        >
-          <Autorenew className={classes.extendedIcon} />
-          Refresh
-        </Button>
+        {this.props.refresh && (
+          <Button
+            id="refresh-button"
+            variant="contained"
+            className={classes.button}
+            onClick={this.props.handleRefresh}
+          >
+            <Autorenew className={classes.extendedIcon} />
+            Refresh
+          </Button>
+        )}
+        {!this.props.refresh && (
+          <p id="loading-refresh">
+            <i>Retrieving information...</i>
+          </p>
+        )}
         <br />
         <span>
           <i id="update-time">
