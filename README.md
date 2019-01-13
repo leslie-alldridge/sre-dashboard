@@ -46,9 +46,11 @@ Clicking on a graph will display the 99% outliers (url, value, count, team) - DO
 ### Desired New Features
 
 Focus on styling and mobile friendly components - (e.g. looking back, tables weren't the best option to update goals)
+
 Learn how to upload my templating engine to Heroku on Go (works locally but local packages were tough through Heroku's Go buildpack)
 
 ### Learning
+
 I created this App over two days. I would have liked to add a lot more features and fine tuned the styling a bit more. Learning how to create a GoLang web server and serve template files was really fun. Writing Go isn't too bad once I understood packages, vendors and how to set up paths on my computer. It was really cool to write an API server in Go and send data through to my main stack being React JS. 
 
 I learned a lot throughout this project and I'm looking forward to the next one.
