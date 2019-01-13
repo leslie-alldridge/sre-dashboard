@@ -115,7 +115,7 @@ server.post("/forgotpassword", (req, res, next) => {
         text:
           `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n` +
           `Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n` +
-          `https://users-leslie.herokuapp.com/#/reset/${token}\n\n` +
+          `https://monitoring-dash.herokuapp.com/#/reset/${token}\n\n` +
           `If you did not request this, please ignore this email and your password will remain unchanged.\n`
       };
 

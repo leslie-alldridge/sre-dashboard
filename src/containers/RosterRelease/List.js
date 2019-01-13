@@ -28,10 +28,10 @@ function ListPanel(props) {
           <ListItemIcon>
             <StarIcon />
           </ListItemIcon>
-          <ListItemText inset primary="A great Xero 9am - 9pm NZT" />
+          <ListItemText inset primary={props.data} />
         </ListItem>
         <ListItem button>
-          <ListItemText inset primary="A fellow Xero 10am - 3pm NZT" />
+          <ListItemText inset primary={props.data2} />
         </ListItem>
       </List>
     </div>

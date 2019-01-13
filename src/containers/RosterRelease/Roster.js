@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import { withStyles } from "@material-ui/core/styles";
 import MuiExpansionPanel from "@material-ui/core/ExpansionPanel";
@@ -51,9 +52,37 @@ const ExpansionPanelDetails = withStyles(theme => ({
 }))(MuiExpansionPanelDetails);
 
 class Roster extends React.Component {
+  _isMounted = false;
+
   state = {
-    expanded: "panel1"
+    expanded: "panel1",
+    rosterData: ""
   };
+
+  componentDidMount = () => {
+    this._isMounted = true;
+    axios
+      .get("https://go-server-dash.herokuapp.com/roster")
+      .then(res => {
+        if (this._isMounted) {
+          this.setState({
+            rosterData:
+              String(res.data["roster"][0][0]) +
+              " " +
+              String(res.data["time1"][0][0]),
+            rosterData2:
+              String(res.data["roster2"][0][0]) +
+              " " +
+              String(res.data["time2"][0][0])
+          });
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
 
   handleChange = panel => (event, expanded) => {
     this.setState({
@@ -73,7 +102,10 @@ class Roster extends React.Component {
             <Typography>Week #1</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <ListPanel />
+            <ListPanel
+              data={this.state.rosterData}
+              data2={this.state.rosterData2}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -84,7 +116,10 @@ class Roster extends React.Component {
             <Typography>Week #2</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <ListPanel />
+            <ListPanel
+              data={this.state.rosterData}
+              data2={this.state.rosterData2}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -95,7 +130,10 @@ class Roster extends React.Component {
             <Typography>Week #3</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <ListPanel />
+            <ListPanel
+              data={this.state.rosterData}
+              data2={this.state.rosterData2}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
         <ExpansionPanel
@@ -106,7 +144,10 @@ class Roster extends React.Component {
             <Typography>Week #4</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails>
-            <ListPanel />
+            <ListPanel
+              data={this.state.rosterData}
+              data2={this.state.rosterData2}
+            />
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
