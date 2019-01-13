@@ -62,9 +62,9 @@ class Errors extends Component {
       threshold: {
         unit: "value",
         values: [
-          this.props.goalData[2].healthy,
-          this.props.goalData[2].low,
-          this.props.goalData[2].high
+          this.props.goalData.healthy,
+          this.props.goalData.low,
+          this.props.goalData.high
         ]
       }
     };
@@ -77,9 +77,9 @@ class Errors extends Component {
         show: false
       },
       values: [
-        this.props.goalData[2].healthy,
-        this.props.goalData[2].low,
-        this.props.goalData[2].high
+        this.props.goalData.healthy,
+        this.props.goalData.low,
+        this.props.goalData.high
       ],
       units: "value"
     };

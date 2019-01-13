@@ -60,9 +60,9 @@ class Traffic extends Component {
       threshold: {
         unit: "value",
         values: [
-          this.props.goalData[1].healthy,
-          this.props.goalData[1].low,
-          this.props.goalData[1].high
+          this.props.goalData.healthy,
+          this.props.goalData.low,
+          this.props.goalData.high
         ]
       }
     };
@@ -76,9 +76,9 @@ class Traffic extends Component {
         show: false
       },
       values: [
-        this.props.goalData[1].healthy,
-        this.props.goalData[1].low,
-        this.props.goalData[1].high
+        this.props.goalData.healthy,
+        this.props.goalData.low,
+        this.props.goalData.high
       ],
       units: "value"
     };

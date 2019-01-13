@@ -48,6 +48,7 @@ class Latency extends Component {
   };
   render() {
     const { classes } = this.props;
+    console.log(this.props.goalData);
 
     const size = {
       height: 220
@@ -61,9 +62,9 @@ class Latency extends Component {
       threshold: {
         unit: "value",
         values: [
-          this.props.goalData[0].healthy,
-          this.props.goalData[0].low,
-          this.props.goalData[0].high
+          this.props.goalData.healthy,
+          this.props.goalData.low,
+          this.props.goalData.high
         ]
       }
     };
@@ -76,9 +77,9 @@ class Latency extends Component {
         show: false
       },
       values: [
-        this.props.goalData[0].healthy,
-        this.props.goalData[0].low,
-        this.props.goalData[0].high
+        this.props.goalData.healthy,
+        this.props.goalData.low,
+        this.props.goalData.high
       ],
       units: "value"
     };

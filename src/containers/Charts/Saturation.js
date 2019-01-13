@@ -61,9 +61,9 @@ class Saturation extends Component {
       threshold: {
         unit: "value",
         values: [
-          this.props.goalData[3].healthy,
-          this.props.goalData[3].low,
-          this.props.goalData[3].high
+          this.props.goalData.healthy,
+          this.props.goalData.low,
+          this.props.goalData.high
         ]
       }
     };
@@ -77,9 +77,9 @@ class Saturation extends Component {
         show: false
       },
       values: [
-        this.props.goalData[3].healthy,
-        this.props.goalData[3].low,
-        this.props.goalData[3].high
+        this.props.goalData.healthy,
+        this.props.goalData.low,
+        this.props.goalData.high
       ],
       units: "value"
     };
