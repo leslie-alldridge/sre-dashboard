@@ -17,7 +17,7 @@ class Routes extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={FullWidthTabs} />
+          <Route exact path="/dashboard/:username" component={FullWidthTabs} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/reset/:token" component={ResetPassword} />

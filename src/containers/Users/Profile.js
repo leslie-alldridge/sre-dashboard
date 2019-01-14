@@ -192,16 +192,11 @@ class Profile extends Component {
             buttonText={"Update Password"}
             link={`/updatePassword/${username}`}
           />
-          <Button
-            style={logoutButton}
-            variant="contained"
-            color="primary"
-            onClick={this.logout}
-          >
-            <Link style={linkStyle} to={"/dashboard"}>
-              Dashboard
-            </Link>
-          </Button>
+          <LinkButtons
+            buttonStyle={forgotButton}
+            buttonText={"Dash Password"}
+            link={`/dashboard/${username}`}
+          />
           <Button
             style={logoutButton}
             variant="contained"

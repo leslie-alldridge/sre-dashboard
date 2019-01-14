@@ -16,6 +16,8 @@ import RosterRelease from "./RosterRelease/RosterRelease";
 import Help from "../components/Help";
 import Loading from "../components/Loading";
 
+import { LinkButtons, homeButton } from "../components";
+
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -45,11 +47,43 @@ class FullWidthTabs extends React.Component {
     trafficData: "",
     errorData: "",
     saturationData: "",
-    refresh: true
+    refresh: true,
+    error: "",
+    auth: false
   };
 
-  componentDidMount = () => {
+  async componentDidMount() {
+    console.log(this.props.match.params);
+
     this._isMounted = true;
+    let accessString = localStorage.getItem("JWT");
+
+    console.log(this.props.match.params);
+
+    axios
+      .get("/finduser", {
+        params: {
+          username: this.props.match.params.username
+        },
+        headers: { Authorization: `JWT ${accessString}` }
+      })
+      .then(response => {
+        console.log(response);
+        if (response.data == "jwt malformed") {
+          this.setState({
+            error: true
+          });
+        } else {
+          this.setState({
+            auth: response.data.auth,
+            error: false
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error.data);
+      });
+
     axios
       .get("https://go-server-dash.herokuapp.com/healthcheck")
       .then(res => {
@@ -63,7 +97,7 @@ class FullWidthTabs extends React.Component {
         }
       })
       .catch(err => console.log(err));
-  };
+  }
 
   componentWillUnmount() {
     this._isMounted = false;
@@ -120,7 +154,14 @@ class FullWidthTabs extends React.Component {
     return (
       <React.Fragment>
         <h3 className="title">{this.state.headerText}</h3>
-        {!this.state.latencyData == "" && (
+        {this.state.error && (
+          <LinkButtons
+            buttonStyle={homeButton}
+            buttonText={"Login to view this page"}
+            link={"/"}
+          />
+        )}
+        {!this.state.latencyData == "" && this.state.auth == true && (
           <div>
             <AppBar id="app-bar" position="static" color="default">
               <Tabs
