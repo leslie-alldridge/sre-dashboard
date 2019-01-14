@@ -127,6 +127,7 @@ ShallowWrapper {
           link="/"
         />,
       ],
+      "id": "user-bg",
     },
     "ref": null,
     "rendered": Array [
@@ -492,6 +493,7 @@ ShallowWrapper {
             link="/"
           />,
         ],
+        "id": "user-bg",
       },
       "ref": null,
       "rendered": Array [

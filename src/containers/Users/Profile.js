@@ -194,7 +194,7 @@ class Profile extends Component {
           />
           <LinkButtons
             buttonStyle={forgotButton}
-            buttonText={"Dash Password"}
+            buttonText={"Dashboard"}
             link={`/dashboard/${username}`}
           />
           <Button

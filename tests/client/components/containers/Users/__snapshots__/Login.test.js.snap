@@ -96,6 +96,7 @@ ShallowWrapper {
           link="/forgotPassword"
         />,
       ],
+      "id": "user-bg",
     },
     "ref": null,
     "rendered": Array [
@@ -345,6 +346,7 @@ ShallowWrapper {
             link="/forgotPassword"
           />,
         ],
+        "id": "user-bg",
       },
       "ref": null,
       "rendered": Array [
