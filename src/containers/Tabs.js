@@ -53,12 +53,8 @@ class FullWidthTabs extends React.Component {
   };
 
   async componentDidMount() {
-    console.log(this.props.match.params);
-
     this._isMounted = true;
     let accessString = localStorage.getItem("JWT");
-
-    console.log(this.props.match.params);
 
     axios
       .get("/finduser", {
@@ -68,7 +64,6 @@ class FullWidthTabs extends React.Component {
         headers: { Authorization: `JWT ${accessString}` }
       })
       .then(response => {
-        console.log(response);
         if (response.data == "jwt malformed") {
           this.setState({
             error: true
@@ -152,7 +147,7 @@ class FullWidthTabs extends React.Component {
   render() {
     const { classes, theme } = this.props;
     return (
-      <div >
+      <div>
         <h3 className="title">{this.state.headerText}</h3>
         {this.state.error && (
           <LinkButtons

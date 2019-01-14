@@ -1,9 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+
+import { logoutButton, linkStyle } from "./";
 
 const styles = theme => ({
   root: {
@@ -66,6 +70,18 @@ function Help(props) {
           of fun creating this.
         </Typography>
         <hr />
+        <Button
+          style={logoutButton}
+          variant="contained"
+          color="primary"
+          onClick={() => {
+            localStorage.removeItem("JWT");
+          }}
+        >
+          <Link style={linkStyle} to={"/"}>
+            Logout
+          </Link>
+        </Button>
       </Paper>
     </div>
   );

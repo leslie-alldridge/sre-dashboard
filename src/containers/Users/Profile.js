@@ -16,7 +16,8 @@ import {
   logoutButton,
   HeaderBar,
   linkStyle,
-  forgotButton
+  forgotButton,
+  registerButton
 } from "../../components";
 
 const loading = {
@@ -193,7 +194,7 @@ class Profile extends Component {
             link={`/updatePassword/${username}`}
           />
           <LinkButtons
-            buttonStyle={forgotButton}
+            buttonStyle={registerButton}
             buttonText={"Dashboard"}
             link={`/dashboard/${username}`}
           />
