@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import TimeAgo from "react-timeago";
 
 import { withStyles } from "@material-ui/core/styles";
