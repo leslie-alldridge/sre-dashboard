@@ -88,7 +88,7 @@ class Saturation extends Component {
         <div className="animated fadeIn" onClick={this.onClick} id="chartBG">
           {!this.state.clicked && (
             <React.Fragment>
-              <p className="gaugeTitle">Saturation (last 60mins</p>
+              <p className="gaugeTitle">Saturation (last 60mins)</p>
               <C3Chart data={data} gauge={gauge} color={color} size={size} />
             </React.Fragment>
           )}
