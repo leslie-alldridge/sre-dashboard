@@ -44,10 +44,9 @@
     "webpack-cli": "^3.2.1"
   },
   "scripts": {
-    "postinstall": "webpack",
     "start": "node server/index",
     "dev": "nodemon --watch server server/index & webpack --watch",
-    "build": "react-scripts build",
+    "build": "webpack",
     "test": "jest",
     "eject": "react-scripts eject"
   },
@@ -68,5 +67,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "heroku-run-build-script": true
 }
