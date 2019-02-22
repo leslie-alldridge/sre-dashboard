@@ -11,7 +11,7 @@ import Latency from "./Charts/Latency";
 import Traffic from "./Charts/Traffic";
 import Errors from "./Charts/Errors";
 import Saturation from "./Charts/Saturation";
-import Loading from "../components/Loading";
+import Loading from "../components/common/Loading";
 
 const styles = theme => ({
   root: {

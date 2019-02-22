@@ -71,8 +71,6 @@ server.post("/login", (req, res, next) => {
 });
 
 server.get("/finduser", (req, res, next) => {
-  console.log("hit");
-
   passport.authenticate("jwt", { session: false }, (err, user, info) => {
     if (err) {
     }

@@ -13,7 +13,7 @@ import {
   forgotButton,
   inputStyle,
   HeaderBar
-} from "../../components";
+} from "../../components/common";
 
 const title = {
   pageTitle: "Login Screen"

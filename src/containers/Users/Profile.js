@@ -18,7 +18,7 @@ import {
   linkStyle,
   forgotButton,
   registerButton
-} from "../../components";
+} from "../../components/common";
 
 const loading = {
   margin: "1em",

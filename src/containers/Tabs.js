@@ -13,10 +13,10 @@ import Typography from "@material-ui/core/Typography";
 import Dashboard from "./Dashboard";
 import Objectives from "./Objectives/Objectives";
 import RosterRelease from "./RosterRelease/RosterRelease";
-import Help from "../components/Help";
-import Loading from "../components/Loading";
+import Help from "../components/common/Help";
+import Loading from "../components/common/Loading";
 
-import { LinkButtons, homeButton } from "../components";
+import { LinkButtons, homeButton } from "../components/common";
 
 function TabContainer({ children, dir }) {
   return (

@@ -5,7 +5,7 @@ import {
   LinkButtons,
   loginButton,
   registerButton
-} from "../components";
+} from "../components/common";
 
 const title = {
   pageTitle: "Home Screen"
