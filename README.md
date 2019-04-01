@@ -2,7 +2,7 @@
 
 ## Goals
 
-Test suite - In Progress
+Test suite - In Progress (Notes Below)
 
 Release and Roster from Go Lang - DONE
 
@@ -47,7 +47,7 @@ Clicking on a graph will display the 99% outliers (url, value, count, team) - DO
 
 Focus on styling and mobile friendly components - (e.g. looking back, tables weren't the best option to update goals)
 
-Learn how to upload my templating engine to Heroku on Go (works locally but local packages were tough through Heroku's Go buildpack)
+Learn how to upload my templating engine to Heroku on Go (works locally but local packages were tough through Heroku's Go buildpack). I Managed to achieve this and have both the frontend and backend applications deployed.
 
 ### Learning
 
@@ -58,3 +58,4 @@ I learned a lot throughout this project and I'm looking forward to the next one.
 ### Todos
 
 Offline test suite - In Progress
+Wasn't able to achieve 100% test coverage in the timeframe I set, but was able to get a solid amount of testing done.
