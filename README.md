@@ -58,4 +58,5 @@ I learned a lot throughout this project and I'm looking forward to the next one.
 ### Todos
 
 Offline test suite - In Progress
-Wasn't able to achieve 100% test coverage in the timeframe I set, but was able to get a solid amount of testing done.
+
+I Wasn't able to achieve 100% test coverage in the timeframe I set, but was able to get a solid amount of testing done.
